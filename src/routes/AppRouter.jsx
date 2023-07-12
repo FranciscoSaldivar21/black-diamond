@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom"
-import { HomePage, AboutPage, GaleryPage, ContactPage } from "../BlackDiamond/pages";
+import { HomePage } from "../BlackDiamond/home/page/HomePage";
+import { GaleryPage, AboutPage, ContactPage } from "../BlackDiamond/pages"
 
 
 

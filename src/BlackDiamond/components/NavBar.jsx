@@ -7,11 +7,31 @@ export const NavBar = () => {
         <p className="text-white">Logo de la empresa</p>
       </div>
       <ul className="flex justify-evenly">
-        <NavLink className="uppercase w-32 px-5 py-3 text-center text-slate-50 hover:text-black hover:bg-amber-500" to='/'>Inicio</NavLink>
-        <NavLink className="uppercase w-32 px-5 py-3 text-center text-slate-50 hover:text-black hover:bg-amber-500" to='/about'>Nosotros</NavLink>
-        <NavLink className="uppercase w-32 px-5 py-3 text-center text-slate-50 hover:text-black hover:bg-amber-500" to='/galery'>Galería</NavLink>
-        <NavLink className="uppercase w-32 px-5 py-3 text-center text-slate-50 hover:text-black hover:bg-amber-500" to='/contact'>Contacto</NavLink>
+        <NavLink
+          className="font-navBarTexts font-bold uppercase w-32 px-5 py-3 text-center text-background hover:-translate-y-1 hover:scale-110"
+          to="/"
+        >
+          Inicio
+        </NavLink>
+        <NavLink
+          className="font-navBarTexts font-bold uppercase w-32 px-5 py-3 text-center text-background hover:-translate-y-1 hover:scale-110"
+          to="/about"
+        >
+          Nosotros
+        </NavLink>
+        <NavLink
+          className="font-navBarTexts font-bold uppercase w-32 px-5 py-3 text-center text-background hover:-translate-y-1 hover:scale-110"
+          to="/galery"
+        >
+          Galería
+        </NavLink>
+        <NavLink
+          className="font-navBarTexts font-bold uppercase w-32 px-5 py-3 text-center text-background hover:-translate-y-1 hover:scale-110"
+          to="/contact"
+        >
+          Contacto
+        </NavLink>
       </ul>
     </div>
-  )
+  );
 }
