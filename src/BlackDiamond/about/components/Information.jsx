@@ -12,7 +12,7 @@ export const Information = () => {
         perspiciatis doloribus, rerum quo quam dolores culpa. Laborum ad autem
         omnis iusto sapiente.
       </p>
-      <p className="text-left font-playFair font-semibold text-2xl mt-4">
+      <p className="text-left font-playFair font-semibold text-2xl mt-8">
         ¿Cuál es nuestra misión?
       </p>
       <p className="mt-2 text-lg">
@@ -20,7 +20,7 @@ export const Information = () => {
         aperiam ab unde atque? Excepturi, nostrum officiis dicta, odio est sed
         accusamus nihil rerum eligendi vero sequi veritatis magni. Dolore.
       </p>
-      <p className="text-left font-playFair font-semibold text-2xl mt-4">
+      <p className="text-left font-playFair font-semibold text-2xl mt-8">
         ¿Por qué comprar un boleto con nosotros?
       </p>
       <p className="mt-2 text-lg">
@@ -28,7 +28,7 @@ export const Information = () => {
         aperiam ab unde atque? Excepturi, nostrum officiis dicta, odio est sed
         accusamus nihil rerum eligendi vero sequi veritatis magni. Dolore.
       </p>
-      <p className="text-left font-playFair font-semibold text-2xl mt-4">
+      <p className="text-left font-playFair font-semibold text-2xl mt-8">
         ¿Cúal es la metodología de nuestros sorteos?
       </p>
       <p className="mt-2 text-lg">
@@ -39,7 +39,7 @@ export const Information = () => {
         error repellat illo sunt nemo asperiores labore facere laboriosam in
         incidunt quas vel, eligendi quam magni ipsa atque!
       </p>
-      <p className="text-left font-playFair font-semibold text-2xl mt-4">
+      <p className="text-left font-playFair font-semibold text-2xl mt-8">
         ¿Cómo comprar un boleto?
       </p>
       <p className="mt-2 text-lg">
@@ -54,7 +54,7 @@ export const Information = () => {
         vitae asperiores iusto fuga vero error ducimus natus repellat
         voluptatum, dolorum doloribus, consequatur aliquid eligendi! Ipsum.
       </p>
-      <PayMethods />
+      <PayMethods/>
     </div>
   );
 };
