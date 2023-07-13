@@ -6,14 +6,14 @@ interface CarProps {
 
 export const Giveaway = ({ car }: CarProps) => {
   return (
-    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg">
       <img
-        class="w-full"
+        className="w-full"
         src="https://img.remediosdigitales.com/1c4e7f/bl5a8845/1366_2000.jpeg"
         alt="Sunset in the mountains"
       />
-      <div class="px-6 py-4">
-        <p class="font-bold text-xl mb-2">The Coldest Sunset</p>
+      <div className="px-6 py-4">
+        <p className="font-bold text-xl mb-2">The Coldest Sunset</p>
         <p className="text-justify">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
           quia, nulla! Maiores et perferendis eaque, exercitationem praesentium

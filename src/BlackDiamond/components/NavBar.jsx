@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
   return (
-    <div className="flex justify-evenly items-center w-full bg-black">
+    <div className="flex justify-evenly items-center w-full bg-black animate-fade-down animate-once animate-duration-1000 animate-delay-1000 animate-ease-linear">
       <div>
         <p className="text-white">Logo de la empresa</p>
       </div>
