@@ -12,15 +12,14 @@ module.exports = {
         darkGreen: "#075E54",
         lightGold: "#FFD700",
         darkGold: "#CCAC00",
+        lightGray: "#F9F9F9",
       },
       fontFamily: {
-        titles: ["Old Standard TT", 'serif'],
+        titles: ["Old Standard TT", "serif"],
         playFair: ["Playfair Display", "serif"],
         navBarTexts: ["Cormorant Garamond", "serif"],
       },
     },
   },
-  plugins: [
-    require('tailwindcss-animated')
-  ],
+  plugins: [require("tailwindcss-animated")],
 };

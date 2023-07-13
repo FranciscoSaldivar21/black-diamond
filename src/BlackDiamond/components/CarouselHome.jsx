@@ -42,7 +42,7 @@ export const CarouselHome = () => {
   };
 
   return (
-    <div className="max-w-[1400px] h-[780px] w-full m-auto mt-10 relative group mb-16 animate-fade-left animate-once animate-duration-[2000ms] animate-ease-linear">
+    <div className="max-w-[1400px] h-[780px] w-full m-auto mt-10 relative group mb-16">
       <h2 className="mb-8 font-titles text-4xl">{title}</h2>
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
