@@ -1,9 +1,11 @@
 import { Layout } from "../../layout/Layout"
+import { GaleryImages } from "../components/GaleryImages"
 
 export const GaleryPage = () => {
   return (
     <Layout>
-      <div>GaleryPage</div>
+      <p className="font-titles text-3xl mb-8">Algunos de nuestros sorteos</p>
+      <GaleryImages />
     </Layout>
   )
 }
