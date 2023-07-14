@@ -1,7 +1,50 @@
+import axios from "axios";
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { userStore } from "../../store/userStore";
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [password2, setPassword2] = useState('');
+
+  const [alert, setAlert] = useState('');
+
+  const setUserId = userStore((state) => state.setId);
+  const setUserName = userStore((state) => state.setName);
+  const setUserEmail = userStore((state) => state.setEmail);
+  const setUserToken = userStore((state) => state.setToken);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    //Validar contraseña
+    if (password !== password2) {
+      setAlert("Las contraseñas no coinciden");
+      setTimeout(() => {
+        setAlert("");
+      }, 3000);
+      return;
+    }
+
+    //Peticion al servidor
+    const { data } = await axios.post("http://localhost:3000/api/users", {
+      name,
+      email,
+      password
+    });
+
+    //Save userState
+    setUserId(data.id);
+    setUserName(data.name);
+    setUserEmail(data.email);
+    setUserToken(data.token);
+
+    //Navegar a inicio de nuevo
+    navigate('/');
+  }
 
   return (
     <div className="bg-lightGray">
@@ -17,12 +60,33 @@ export const RegisterPage = () => {
             <form className="space-y-4 md:space-y-6" action="#">
               <div>
                 <label
+                  htmlFor="name"
+                  className="block mb-2 text-sm font-medium text-white"
+                >
+                  Tu nombre
+                </label>
+                <input
+                  value={name}
+                  onChange={({target}) => setName(target.value)}
+                  type="text"
+                  name="name"
+                  id="name"
+                  className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="Juan Perez"
+                  required=""
+                  minLength={10}
+                />
+              </div>
+              <div>
+                <label
                   htmlFor="email"
                   className="block mb-2 text-sm font-medium text-white"
                 >
                   Tu correo
                 </label>
                 <input
+                  value={email}
+                  onChange={({target}) => setEmail(target.value)}
                   type="email"
                   name="email"
                   id="email"
@@ -39,6 +103,8 @@ export const RegisterPage = () => {
                   Contraseña
                 </label>
                 <input
+                  value={password}
+                  onChange={({target}) => setPassword(target.value)}
                   type="password"
                   name="password"
                   id="password"
@@ -55,6 +121,8 @@ export const RegisterPage = () => {
                   Confirma tu contraseña
                 </label>
                 <input
+                  value={password2}
+                  onChange={({target}) => setPassword2(target.value)}
                   type="password"
                   name="confirm-password"
                   id="confirm-password"
@@ -63,7 +131,9 @@ export const RegisterPage = () => {
                   required=""
                 />
               </div>
+              <p className="text-red-600">{ alert }</p>
               <button
+                onClick={(event) => handleSubmit(event)}
                 type="submit"
                 className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-800"
               >

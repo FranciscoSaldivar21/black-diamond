@@ -3,7 +3,7 @@ import { userStore } from "../../store/userStore";
 import { Button } from "../molecules/Button";
 
 export const NavBar = () => {
-  const { email } = userStore();
+  const { id, name } = userStore();
   const navigate = useNavigate();
 
   const handleLogIn = () => {
@@ -51,7 +51,7 @@ export const NavBar = () => {
           </NavLink>
         </li>
       </ul>
-      {email === "" ? (
+      {id === null ? (
         <Button
           title="Iniciar sesión"
           bgColor="darkGold"
@@ -59,7 +59,7 @@ export const NavBar = () => {
           onPress={handleLogIn}
         />
       ) : (
-        ""
+        <p className="text-white">{ name }</p>
       )}
     </div>
   );
