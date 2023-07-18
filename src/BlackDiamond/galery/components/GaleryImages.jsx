@@ -1,6 +1,6 @@
 export const GaleryImages = () => {
   return (
-    <div className="mb-12">
+    <div className="mb-12 mt-12">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="grid gap-4">
           <div>

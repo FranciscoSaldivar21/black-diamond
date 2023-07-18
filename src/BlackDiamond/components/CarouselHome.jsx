@@ -3,7 +3,6 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 
 export const CarouselHome = () => {
-  const title = "Algunos de nuestros autos sorteados anteriormente";
   const slides = [
     {
       url: "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/5ddb94b1bcb3b63ca9748722d899ec98.jpg",
@@ -42,8 +41,7 @@ export const CarouselHome = () => {
   };
 
   return (
-    <div className="h-[780px] w-full mt-10 group mb-16">
-      <h2 className="mb-8 font-titles text-4xl">{title}</h2>
+    <div className="h-[780px] w-full m-auto mt-10 relative group mb-16">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full rounded-2xl bg-center bg-cover duration-500"

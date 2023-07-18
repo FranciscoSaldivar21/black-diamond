@@ -59,7 +59,7 @@ export const NavBar = () => {
           onPress={handleLogIn}
         />
       ) : (
-        <p className="text-white">{ name }</p>
+        <NavLink className="text-white hover:font-bold" to="user">{ name }</NavLink>
       )}
     </div>
   );

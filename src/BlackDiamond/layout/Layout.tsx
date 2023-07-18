@@ -9,10 +9,10 @@ interface LayoutProps {
 
 export const Layout = ({ children } : LayoutProps) => {
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full">
       <NavBar />
       <WhatsApp />
-      <div className="container w-4/5 mx-auto mt-12">
+      <div className="w-full mt-12">
         {children}
       </div>
       <Footer />

@@ -2,7 +2,7 @@
 
 export const HomeItem = () => {
   return (
-    <div>
+    <div className="mt-28 w-11/12 mx-auto">
       <h2 className="font-titles text-3xl mb-6">
         LA MEJOR OPCIÓN PARA TENER EL AUTO DE TUS SUEÑOS
       </h2>

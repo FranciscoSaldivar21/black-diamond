@@ -6,6 +6,7 @@ import { GaleryPage } from "../BlackDiamond/galery/page/GaleryPage";
 import { LogInPage } from "../auth/pages/LogInPage";
 import { RegisterPage } from "../auth/pages/RegisterPage";
 import { userStore } from "../store/userStore";
+import { UserPage } from "../BlackDiamond/user/page/UserPage";
 
 
 
@@ -20,6 +21,7 @@ const AppRouter = () => {
             <Route path="/about" element={< AboutPage/>} />
             <Route path="/galery" element={<GaleryPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/user" element={<UserPage />} />
             <Route path="/*" element={<Navigate to={"/"} />} />
         </Routes>
     )
