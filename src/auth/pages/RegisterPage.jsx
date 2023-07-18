@@ -8,6 +8,7 @@ import { isValidEmail } from "../helpers/validateEmail";
 export const RegisterPage = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
+  const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
@@ -15,6 +16,7 @@ export const RegisterPage = () => {
   const [alert, setAlert] = useState('');
 
   const setUserId = userStore((state) => state.setId);
+  const setUserPhone = userStore((state) => state.setPhone);
   const setUserName = userStore((state) => state.setName);
   const setUserEmail = userStore((state) => state.setEmail);
   const setUserToken = userStore((state) => state.setToken);
@@ -22,8 +24,25 @@ export const RegisterPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if(phone.length < 10){
+      setAlert("El numero debe de ser de al menos 10 digitos");
+      setTimeout(() => {
+        setAlert("");
+      }, 4000);
+      return;
+    }
+
+    if (password.length < 6) {
+      setAlert("La contraseña debe de ser de al menos 6 caracteres");
+      setTimeout(() => {
+        setAlert("");
+      }, 4000);
+      setPassword("");
+      setPassword2("");
+      return;
+    }
     //Validar campos
-    if(password === '' || password2 === '' || email === '' || name === ''){
+    if(password === '' || password2 === '' || email === '' || name === '' || phone === ''){
       setAlert("Llene todos los campos");
       setTimeout(() => {
         setAlert("");
@@ -53,11 +72,13 @@ export const RegisterPage = () => {
     try {
       const response = await axios.post("http://localhost:3000/api/users/register", {
       name,
+      phone,
       email,
       password
     });
       const { data } = response;
       setUserId(data.id);
+      setUserPhone(data.phone);
       setUserName(data.name);
       setUserEmail(data.email);
       setUserToken(data.token);
@@ -102,6 +123,26 @@ export const RegisterPage = () => {
                   placeholder="Juan Perez"
                   required={true}
                   minLength={10}
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block mb-2 text-sm font-medium text-white"
+                >
+                  Celular
+                </label>
+                <input
+                  value={phone}
+                  onChange={({ target }) => setPhone(target.value)}
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="Tu numero de celular"
+                  required={true}
+                  minLength={10}
+                  maxLength={15}
                 />
               </div>
               <div>

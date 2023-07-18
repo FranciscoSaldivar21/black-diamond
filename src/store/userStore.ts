@@ -3,10 +3,12 @@ import { persist, createJSONStorage } from "zustand/middleware";
 
 interface User {
     id: number,
+    phone: number,
     name: string,
     email: string,
     token: string,
     setId: (id: number) => void,
+    setPhone: (phone: string) => void,
     setName: (name: string) => void,
     setEmail: (email: string) => void,
     setToken: (token: string) => void,
@@ -21,6 +23,7 @@ export const userStore = create<User>(
         email: null,
         token: null,
         setId: (id: number) => set((state) => ({id})),
+        setPhone: (phone: number) => set((state) => ({phone})),
         setName: (name: string) => set((state) => ({name})),
         setEmail: (email: string) => set((state) => ({email})),
         setToken: (token: string) => set((state) => ({token})),

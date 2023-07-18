@@ -7,13 +7,13 @@ interface IButtonProps {
 
 export const Button = (props : IButtonProps) => {
   const {title, bgColor, textColor, onPress} = props;
-  console.log({props})
+  console.log(props)
   return (
     <button
       onClick={onPress}
-      className={`text-${textColor} py-1 px-3 rounded-lg hover:text-darkGold hover:font-semibold`}
+      className={`w-40 mr-2 py-2 px-5 text-white bg-blue-500 rounded-lg hover:font-semibold`}
     >
-      {props.title}
+      {title}
     </button>
   );
 }

@@ -21,7 +21,7 @@ const AppRouter = () => {
             <Route path="/about" element={< AboutPage/>} />
             <Route path="/galery" element={<GaleryPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/user" element={<UserPage />} />
+            <Route path="/user" element={ id === null ? <Navigate to={"/"} /> : <UserPage /> } />
             <Route path="/*" element={<Navigate to={"/"} />} />
         </Routes>
     )
