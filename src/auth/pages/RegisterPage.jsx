@@ -1,7 +1,9 @@
-import axios from "axios";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import axios from "axios";
+
 import { userStore } from "../../store/userStore";
+import { isValidEmail } from "../helpers/validateEmail";
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
@@ -20,30 +22,55 @@ export const RegisterPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    //Validar campos
+    if(password === '' || password2 === '' || email === '' || name === ''){
+      setAlert("Llene todos los campos");
+      setTimeout(() => {
+        setAlert("");
+      }, 4000);
+      return;
+    }
+
+    //Validar correo
+    if(!isValidEmail(email)){
+      setAlert("Email inválido");
+      setTimeout(() => {
+        setAlert("");
+      }, 4000);
+      return;
+    }
+
     //Validar contraseña
     if (password !== password2) {
       setAlert("Las contraseñas no coinciden");
       setTimeout(() => {
         setAlert("");
-      }, 3000);
+      }, 4000);
       return;
     }
 
     //Peticion al servidor
-    const { data } = await axios.post("http://localhost:3000/api/users", {
+    try {
+      const response = await axios.post("http://localhost:3000/api/users/register", {
       name,
       email,
       password
     });
-
-    //Save userState
-    setUserId(data.id);
-    setUserName(data.name);
-    setUserEmail(data.email);
-    setUserToken(data.token);
-
-    //Navegar a inicio de nuevo
-    navigate('/');
+      const { data } = response;
+      setUserId(data.id);
+      setUserName(data.name);
+      setUserEmail(data.email);
+      setUserToken(data.token);
+    } catch (error) {
+      if(error){
+        const errorMessage = error.response.data.error;
+        setAlert(errorMessage);
+        setTimeout(() => {
+          setAlert("");
+        }, 4000);
+      }
+      return;
+    }
   }
 
   return (
@@ -67,13 +94,13 @@ export const RegisterPage = () => {
                 </label>
                 <input
                   value={name}
-                  onChange={({target}) => setName(target.value)}
+                  onChange={({ target }) => setName(target.value)}
                   type="text"
                   name="name"
                   id="name"
                   className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Juan Perez"
-                  required=""
+                  required={true}
                   minLength={10}
                 />
               </div>
@@ -86,13 +113,13 @@ export const RegisterPage = () => {
                 </label>
                 <input
                   value={email}
-                  onChange={({target}) => setEmail(target.value)}
+                  onChange={({ target }) => setEmail(target.value)}
                   type="email"
                   name="email"
                   id="email"
                   className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                   placeholder="name@mail.com"
-                  required=""
+                  required={true}
                 />
               </div>
               <div>
@@ -104,13 +131,14 @@ export const RegisterPage = () => {
                 </label>
                 <input
                   value={password}
-                  onChange={({target}) => setPassword(target.value)}
+                  onChange={({ target }) => setPassword(target.value)}
                   type="password"
                   name="password"
                   id="password"
                   placeholder="••••••••"
                   className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
-                  required=""
+                  required={true}
+                  autoComplete="false"
                 />
               </div>
               <div>
@@ -122,16 +150,17 @@ export const RegisterPage = () => {
                 </label>
                 <input
                   value={password2}
-                  onChange={({target}) => setPassword2(target.value)}
+                  onChange={({ target }) => setPassword2(target.value)}
                   type="password"
                   name="confirm-password"
                   id="confirm-password"
                   placeholder="••••••••"
                   className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
-                  required=""
+                  required={true}
+                  autoComplete="false"
                 />
               </div>
-              <p className="text-red-600">{ alert }</p>
+              <p className="text-red-600">{alert}</p>
               <button
                 onClick={(event) => handleSubmit(event)}
                 type="submit"
