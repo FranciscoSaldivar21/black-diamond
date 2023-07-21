@@ -1,6 +1,5 @@
 import { Footer } from "../components/Footer";
 import { NavBar } from "../components/NavBar";
-
 import { WhatsApp } from "../components/WhatsApp";
 
 interface LayoutProps {

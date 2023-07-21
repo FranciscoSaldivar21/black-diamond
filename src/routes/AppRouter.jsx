@@ -7,6 +7,8 @@ import { LogInPage } from "../auth/pages/LogInPage";
 import { RegisterPage } from "../auth/pages/RegisterPage";
 import { userStore } from "../store/userStore";
 import { UserPage } from "../BlackDiamond/user/page/UserPage";
+import { GiveawaysPage } from "../BlackDiamond/giveaways/page/GiveawaysPage";
+import { GiveawayPage } from "../BlackDiamond/giveaways/page/GiveawayPage";
 
 
 
@@ -22,6 +24,8 @@ const AppRouter = () => {
             <Route path="/galery" element={<GaleryPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/user" element={ id === null ? <Navigate to={"/"} /> : <UserPage /> } />
+            <Route path="/giveaways" element={ <GiveawaysPage /> } />
+            <Route path="/giveaway/:id" element={ <GiveawayPage /> } />
             <Route path="/*" element={<Navigate to={"/"} />} />
         </Routes>
     )

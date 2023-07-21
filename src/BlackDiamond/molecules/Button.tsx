@@ -7,7 +7,7 @@ interface IButtonProps {
 
 export const Button = (props : IButtonProps) => {
   const {title, bgColor, textColor, onPress} = props;
-  console.log(props)
+
   return (
     <button
       onClick={onPress}

@@ -1,4 +1,4 @@
-import { Layout } from "../../layout/Layout"
+import { Layout } from "../../ui/layout/Layout"
 import { Form } from "../components"
 
 

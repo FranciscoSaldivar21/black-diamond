@@ -1,10 +1,13 @@
-import { Layout } from "../../layout/Layout"
-import { Information } from "../components"
+import { Layout } from "../../ui/layout/Layout";
+import { Information } from "../components";
 
 export const AboutPage = () => {
   return (
     <Layout>
-      <Information />
+      <div className="mx-20">
+        <Information />
+
+      </div>
     </Layout>
   )
 }

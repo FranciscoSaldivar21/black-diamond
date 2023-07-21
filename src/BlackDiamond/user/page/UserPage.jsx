@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { userStore } from "../../../store/userStore";
-import { Layout } from "../../layout/Layout";
 import { Button } from "../../molecules/Button";
 import axios from "axios";
+import { Layout } from "../../ui/layout/Layout";
 
 export const UserPage = () => {
     
@@ -10,6 +10,7 @@ export const UserPage = () => {
     const name = userStore((state) => state.name);
     const email = userStore((state) => state.email);
     const phone = userStore((state) => state.phone);
+    const adress = userStore((state) => state.adress);
     const setUserPhone = userStore((state) => state.setPhone);
     const setUserName = userStore((state) => state.setName);
     const setUserEmail = userStore((state) => state.setEmail);
@@ -56,7 +57,7 @@ export const UserPage = () => {
                 <p className="text-xl mb-4">Mi nombre: <span className="font-bold">{name}</span></p>
                 <p className="text-xl mb-4">Mi telefono: <span className="font-bold">{phone}</span></p>
                 <p className="text-xl mb-4">Mi correo: <span className="font-bold">{email}</span></p>
-
+                <p className="text-xl mb-4">Mi direccion: <span className="font-bold">{adress}</span></p>
             </div>
             {edit === true ?
                 <div className="flex-row mt-20 w-2/5">

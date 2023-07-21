@@ -1,8 +1,8 @@
-import { CarouselHome } from "../../components/CarouselHome";
-import { HomeItem } from "../components/HomeItem"
-import { Layout } from "../../layout/Layout"
-import { ActiveGiveaways } from "../../components/ActiveGiveaways";
+import { HomeItem } from "../components/HomeItem";
 import { GaleryImages } from "../../galery/components/GaleryImages";
+import { ActiveGiveaways } from "../../giveaways/components/ActiveGiveaways";
+import { Layout } from "../../ui/layout/Layout";
+import { CarouselHome } from "../components/CarouselHome";
 
 export const HomePage = () => {
   return (
