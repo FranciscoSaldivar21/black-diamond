@@ -19,6 +19,9 @@ module.exports = {
         playFair: ["Playfair Display", "serif"],
         navBarTexts: ["Cormorant Garamond", "serif"],
       },
+      backgroundImage: {
+        "navBar": "url('/src/assets/navBarImage.jpg')",
+      },
     },
   },
   plugins: [require("tailwindcss-animated")],

@@ -11,7 +11,7 @@ export const Button = (props : IButtonProps) => {
   return (
     <button
       onClick={onPress}
-      className={`w-40 mr-2 py-2 px-5 text-white bg-blue-500 rounded-lg hover:font-semibold`}
+      className={`w-40 mr-2 py-2 px-5 text-black font-medium bg-darkGold rounded-lg hover:font-bold hover:bg-lightGold`}
     >
       {title}
     </button>

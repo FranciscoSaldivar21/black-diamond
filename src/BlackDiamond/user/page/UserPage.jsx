@@ -5,6 +5,7 @@ import axios from "axios";
 import { Layout } from "../../ui/layout/Layout";
 
 export const UserPage = () => {
+    const reset = userStore((state) => state.reset);
     
     const id = userStore((state) => state.id);
     const name = userStore((state) => state.name);
@@ -59,6 +60,7 @@ export const UserPage = () => {
                 <p className="text-xl mb-4">Mi correo: <span className="font-bold">{email}</span></p>
                 <p className="text-xl mb-4">Mi direccion: <span className="font-bold">{adress}</span></p>
             </div>
+            <button onClick={reset} type="button" className="rounded-lg text-white py-2 px-4 bg-red-500 hover:bg-red-600">Cerrar sesión</button>
             {edit === true ?
                 <div className="flex-row mt-20 w-2/5">
                     <p className="font-titles text-4xl">Nuevos datos</p>

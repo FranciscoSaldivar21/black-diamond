@@ -30,10 +30,16 @@ export const userStore = create<User>(
         setEmail: (email: string) => set((state) => ({email})),
         setToken: (token: string) => set((state) => ({token})),
         setAdress: (adress: string) => set((state) => ({adress})),
+        reset: () => set((state) => ({
+          id: null,
+          name: null,
+          email: null,
+          token: null,
+        }))
     }),
     {
       name: 'auth-storage', // unique name
-      storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
+      storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
     }
   )
 )

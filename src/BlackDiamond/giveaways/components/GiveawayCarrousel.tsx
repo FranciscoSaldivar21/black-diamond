@@ -1,37 +1,35 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 
-export const GiveawayCarrousel = () => {
-  const slides = [
-    {
-      url: "https://acnews.blob.core.windows.net/imgnews/large/NAZ_0db230125fe84e8f8351a2a8c5eb65e1.jpg",
-    },
-    {
-      url: "https://editorial.pxcrush.net/carsales/general/editorial/190904_shelby_f150_01.jpg?width=1024&height=683",
-    },
-    {
-      url: "https://assets-global.website-files.com/5b4a3b3971d099f78f362505/62e7ec1b2265c54334148f01_2022-Ford-F-150-Shelby-Super-Snake-White-1FTFW1E55NFA21059_012.jpg",
-    },
-
-    {
-      url: "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2015/11/477039-ford-f150-shelby-blanco.jpg?tf=3840x",
-    },
-    {
-      url: "https://es.digitaltrends.com/wp-content/uploads/2017/05/shelby-f-150-super-snake-feat.jpg?p=1",
-    },
-  ];
-
+export const GiveawayCarrousel = ({id} : props) => {
+  const [images, setImages] = useState([{ image_name: "" }]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const getImages = async () => {
+    try {
+      const { data } = await axios.get(
+        "http://localhost:3000/api/giveaway/images/" + id
+      );
+      setImages(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getImages();
+  }, []);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
 
   const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
+    const isLastSlide = currentIndex === images.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
@@ -40,10 +38,13 @@ export const GiveawayCarrousel = () => {
     setCurrentIndex(slideIndex);
   };
 
+
   return (
     <div className="h-[700px] w-full m-auto mt-10 relative group mb-16">
       <div
-        style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+        style={{
+          backgroundImage: `url(http://localhost:3000/uploads/${images[currentIndex].image_name})`,
+        }}
         className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
       ></div>
       {/* Left Arrow */}
@@ -55,10 +56,10 @@ export const GiveawayCarrousel = () => {
         <BsChevronCompactRight onClick={nextSlide} size={30} />
       </div>
       <div className="flex top-4 justify-center py-2">
-        {slides.map((slide, slideIndex) => (
+        {images.map((image, imageIndex) => (
           <div
-            key={slideIndex}
-            onClick={() => goToSlide(slideIndex)}
+            key={imageIndex}
+            onClick={() => goToSlide(imageIndex)}
             className="text-2xl cursor-pointer"
           >
             <RxDotFilled />
