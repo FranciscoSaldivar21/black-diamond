@@ -1,13 +1,14 @@
+import { HomeItem } from "../../home/components/HomeItem";
 import { Layout } from "../../ui/layout/Layout";
-import { Information } from "../components";
+import { PayMethods } from "../components/PayMethods";
 
 export const AboutPage = () => {
   return (
     <Layout>
-      <div className="mx-20">
-        <Information />
-
+      <div className="w-11/12 mx-auto mt-8">
+        <HomeItem />
+        <PayMethods />
       </div>
     </Layout>
-  )
+  );
 }

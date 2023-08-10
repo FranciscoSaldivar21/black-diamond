@@ -1,0 +1,63 @@
+let typeBenefic;
+if(benefic === 1)
+    typeBenefic = "TIENES BENEFICIO BLACK DIAMOND GOLD POR COMPRAR EN LA PRIMERA SEMANA";
+else if(benefic === 2)
+    typeBenefic = "TIENES BENEFICIO BLACK DIAMOND SILVER POR COMPRAR EN LA SEGUNDA SEMANA";
+else if(benefic === 3)
+    typeBenefic = "TIENES BENEFICIO BLACK DIAMOND BRONZE POR COMPRAR EN LA TERCERA SEMANA";
+else
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            body: ['roboto', 'sans-serif'],
+                            title: ['Gothic A1', 'sans-serif']
+                        },
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body class="w-full">
+        <div class="w-11/12 mx-auto mt-6">
+            <div>
+                <h1 class="text-3xl font-bold uppercase text-center font-title">
+                    BLACK DIAMOND SORTEOS
+                </h1>
+                <p class="mt-4 font-body text-lg uppercase">Gracias por tu compra.</p>
+                <p class="mt-6 font-body text-lg">Te hacemos envío del detalle de tu compra.</p>
+            </div>
+            <div class="h-40">
+                <p class="mt-4 font-body text-lg uppercase font-semibold">${typeBenefic}</p>
+                <p class="mt-4 font-body text-lg">Boletos comprados:</p>
+                <p class="mt-2 font-body text-lg">...</p>
+                <p class="mt-4 font-body text-lg">Boletos de regalo:</p>
+                <p class="mt-2 font-body text-lg">...</p>
+            </div>
+            <div class="mt-10">
+                <p class="font-body text-lg">Te recomendamos conservar este correo para futuras aclaraciones.</p>
+                <p class="font-body text-lg">De igual manera puedes revisarlo en nuestra pagina iniciando sesión con tu cuenta y yendo a la pestaña de "MIS COMPRAS".</p>
+                <p class="font-body text-lg">Espera el sorteo, te deseamos mucha suerte.</p>
+                <div class="flex flex-row justify-center align-middle items-center mt-10">
+                    <img src="./src/assets/black_diamond.png" class="w-16 mr-4"/>
+                    <div>
+                        <p class="font-body text-center text-lg">Si tienes alguna duda puedes comunicarte al correo: </p>
+                        <p class="font-body text-center font-bold italic text-lg">blackdiamondsortes@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

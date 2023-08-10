@@ -13,19 +13,27 @@ export const Tickets = () => {
 
     let arrayOffset = [];
     let pages = 0;
-    for (let i = 0; pages < totalTickets; pages += 1000) {
+    for (let i = 0; pages < totalTickets; pages += 500) {
         arrayOffset.push(i);
         i++;
     }
   return (
     <div>
-      {
-        id ? <TicketsDrawer offsetRange={arrayOffset} />
-        : <div>
-            <p className="text-black"><span onClick={() => navigate("/auth")} className="text-darkGold cursor-pointer font-semibold">Inicia sesión </span> para ver los boletos disponibles</p>
-          </div>
-      }
-
+      {id ? (
+        <TicketsDrawer offsetRange={arrayOffset} totalTickets={totalTickets} />
+      ) : (
+        <div>
+          <p className="text-black text-sm sm:text-base text-md md:text-xl">
+            <span
+              onClick={() => navigate("/auth")}
+              className="text-darkGold cursor-pointer font-semibold hover:text-yellow-700 text-sm sm:text-base text-md md:text-xl"
+            >
+              Inicia sesión{" "}
+            </span>{" "}
+            para ver los boletos disponibles
+          </p>
+        </div>
+      )}
     </div>
   );
 }

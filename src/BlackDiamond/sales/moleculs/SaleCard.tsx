@@ -23,7 +23,7 @@ export const SaleCard = ({ sale }: props) => {
     
 
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
+        <div className="rounded overflow-hidden shadow-lg">
             <img
                 className="w-full"
                 src={`http://localhost:3000/uploads/${images[0].image_name}`}
@@ -32,6 +32,7 @@ export const SaleCard = ({ sale }: props) => {
             <div className="px-6 py-4">
                 <p className="font-bold text-xl mb-2">{sale.car}</p>
                 <p className="text-justify">Id de compra: {sale.id}</p>
+                <p className="text-justify">Fecha de compra: {sale.sale_date}</p>
                 <p className="text-justify">{sale.description}</p>
                 <p className="mt-2">
                     Status:{" "}

@@ -24,6 +24,8 @@ export const userStore = create<User>(
         name: null,
         email: null,
         token: null,
+        phone: null,
+        adress: null,
         setId: (id: number) => set((state) => ({id})),
         setPhone: (phone: number) => set((state) => ({phone})),
         setName: (name: string) => set((state) => ({name})),
@@ -33,7 +35,9 @@ export const userStore = create<User>(
         reset: () => set((state) => ({
           id: null,
           name: null,
+          phone: null,
           email: null,
+          adress: null,
           token: null,
         }))
     }),

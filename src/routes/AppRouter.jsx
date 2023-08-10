@@ -29,9 +29,9 @@ const AppRouter = () => {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/user" element={ id === null ? <Navigate to={"/"} /> : <UserPage /> } />
             <Route path="/giveaways" element={ <GiveawaysPage /> } />
-            <Route path="/mySales" element={ <SalesPage /> } />
+            <Route path="/mySales" element={ id === null ? <LogInPage /> : <SalesPage /> } />
             <Route path="/giveaway/:id" element={ <GiveawayPage /> } />
-            <Route path="/sale" element={ <SalePage /> } />
+            <Route path="/sale" element={ id === null ? < LogInPage/> : <SalePage /> } />
             <Route path="/*" element={<Navigate to={"/"} />} />
         </Routes>
     )

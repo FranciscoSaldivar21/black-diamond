@@ -8,6 +8,7 @@ import { userStore } from "../../../store/userStore";
 
 export const SalePage = () => {
     const token = userStore((state) => state.token);
+    const reset = userStore((state) => state.reset);
     const [isLoading, setIsLoading] = useState(true);
     const [sale, setSale] = useState({});
     const [total, setTotal] = useState(0);
@@ -16,17 +17,23 @@ export const SalePage = () => {
 
     //Extraer parametro para mostrar datos
     const saleId = location.state.saleId;
-    console.log(saleId);
 
     const getSaleData = async () => {
-        const { data } = await axios.get(`http://localhost:3000/api/sales/getSaleById/${saleId}`, {
-            headers: {
-                "x-token": token,
-            },
-        });
-        setSale(data.saleData);
-        setTickets(data.ticketsData);
-        setIsLoading(false);
+        try {
+            const { data } = await axios.get(`http://localhost:3000/api/sales/getSaleById/${saleId}`, {
+                headers: {
+                    "x-token": token,
+                },
+            });
+            setSale(data.saleData);
+            setTickets(data.ticketsData);
+            setIsLoading(false);
+            
+        } catch (error) {
+            console.log(error.response.data);
+            if(error.response.data.ok === false)
+                reset();
+        }
     }
 
     useEffect(() => {
@@ -39,32 +46,38 @@ export const SalePage = () => {
     
   return (
     <Layout>
-        <div className="w-11/12 mx-auto">
-            <p className="text-3xl font-bold mb-8">Tu compra</p>
-            <p>Gracias por tu compra, espera la fecha del sorteo para ver el ganador.</p>
-            <p>Te recomendamos actualizar tus datos de contacto, ya que si eres ganador nos comunicaremos por esos medios contigo.</p>
-            <p className="uppercase">!Te deseamos mucha suerte!</p>
+        <div className="w-11/12 mx-auto mt-8 mb-4">
+            <p className="text-4xl font-titles uppercase md:text-5xl mb-8">Tu compra</p>
+            <p className="text-justify md:text-lg">Gracias por tu compra, espera la fecha del sorteo para ver el ganador.</p>
+            <p className="text-justify md:text-lg">Te recomendamos actualizar tus datos de contacto, ya que si eres ganador nos comunicaremos por esos medios contigo.</p>
+            <p className="uppercase mt-4 md:text-lg">!Te deseamos mucha suerte!</p>
             <div className="mt-8">
-                <p className="text-xl font-semibold">Detalles de tu compra</p>
-                <p><span className="font-bold">ID de compra: </span>{ sale.id }</p>
-                <p><span className="font-bold">Fecha de compra: </span>{ sale.sale_date }</p>
-                <p><span className="font-bold">Total de compra: </span>${ total }</p>
+                <p className="text-xl font-semibold uppercase font-subTitles md:text-3xl mb-6">Detalles de tu compra</p>
+                <p><span className="font-bold md:text-lg">ID de compra: </span>{ sale.id }</p>
+                <p><span className="font-bold md:text-lg">Fecha de compra: </span>{ sale.sale_date }</p>
+                <p><span className="font-bold md:text-lg">Total de compra: </span>${ total }</p>
+                <p><span className="font-bold md:text-lg">Beneficio: </span>{ sale.benefic }</p>
             </div>
-            <div className="mt-8">
-                <p className="text-xl font-semibold">Sorteo </p>
-                <p><span className="font-bold">Auto: </span>{ sale.car }</p>
-                <p><span className="font-bold">Descripción del auto: </span>{ sale.description }</p>
-                <p><span className="font-bold">Fecha de registro del sorteo: </span>{ sale.creation_date }</p>
-                <p><span className="font-bold">Fecha del sorteo: </span>{ sale.giveaway_date }</p>
+            <div className="mt-4">
+                <p className="text-xl font-semibold uppercase font-subTitles md:text-3xl mb-2">Sorteo </p>
+                <p className="md:text-lg"><span className="font-bold md:text-lg">Auto: </span>{ sale.car }</p>
+                <p className="md:text-lg"><span className="font-bold md:text-lg">Descripción del auto: </span>{ sale.description }</p>
+                <p className="md:text-lg"><span className="font-bold md:text-lg">Fecha de registro del sorteo: </span>{ sale.creation_date }</p>
+                <p className="md:text-lg"><span className="font-bold md:text-lg">Fecha del sorteo: </span>{ sale.giveaway_date }</p>
                 {
-                    sale.status === 1 ? <p className="text-green-6 00"><span className="text-black font-bold">Estatus del sorteo: </span>Activo</p>
-                    : <p className="text-red-6 00"><span className="text-black font-bold">Estatus del sorteo: </span>Inactivo</p>
+                    sale.status === 1 ? <p className="text-green-600"><span className="text-black font-bold md:text-lg">Estatus del sorteo: </span>Activo</p>
+                    : <p className="text-red-600"><span className="text-black font-bold md:text-lg">Estatus del sorteo: </span>Inactivo</p>
                 }
                 
             </div>
-            <div className="mt-8">
-                <p className="text-xl font-semibold">Boletos comprados <span>({ tickets.length })</span></p>
-                <BuyTickest data={tickets} />
+            <div className="mt-4 uppercase font-extrabold md:text-lg">
+                {
+                    sale.benefic === 1 ? <p>Tienes beneficio GOLD DIAMOND por comprar en la primer semana</p>
+                    : sale.benefic === 2 ? <p>Tienes beneficio SILVER DIAMOND por comprar en la segunda semana</p>
+                        :sale.benefic === 3 ? <p>Tienes beneficio BRONZE DIAMOND por comprar en la tercer semana</p>
+                        : ""
+                }
+                <BuyTickest data={tickets} benefic={sale.benefic}/>
             </div>
         </div>
     </Layout>

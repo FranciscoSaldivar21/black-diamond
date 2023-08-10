@@ -39,14 +39,14 @@ export const GiveawayCard = ({ giveaway } : ICarProps) => {
   }
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="rounded overflow-hidden shadow-lg">
       <img
         className="w-full"
         src={`http://localhost:3000/uploads/${images[0].image_name}`}
         alt="Sunset in the mountains"
       />
       <div className="px-6 py-4">
-        <p className="font-bold text-xl mb-2">{giveaway.car}</p>
+        <p className="font-bold text-xl mb-2 uppercase">{giveaway.car}</p>
         <p className="text-justify">{giveaway.description}</p>
         <p className="mt-2">
           Status:{" "}
@@ -60,7 +60,7 @@ export const GiveawayCard = ({ giveaway } : ICarProps) => {
       <div className="flex justify-center align-bottom">
         <button
           onClick={handleButtonPress}
-          className="uppercase rounded w-60 h-8 mb-4 text-white transition ease-in-out delay-50 bg-blue-700 hover:-translate-y-1 hover:scale-110 hover:bg-blue-500 duration-100"
+          className="uppercase rounded w-60 h-8 mb-4 text-black transition ease-in-out delay-50 bg-lightGold hover:-translate-y-1 hover:scale-110 hover:bg-darkGold duration-100"
         >
           Ver sorteo
         </button>

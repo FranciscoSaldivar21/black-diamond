@@ -14,10 +14,11 @@ export const InactiveGiveaways = () => {
   useEffect(() => {
     getGiveaways();
   }, []);
-  return (
-    <div className="ml-20">
+
+  return giveaways.length > 0 ? (
+    <div>
       <div>
-        <h1 className="font-titles text-3xl mb-6 uppercase">
+        <h1 className="font-subTitles font-semibold text-3xl md:text-3xl mb-6 uppercase">
           Sorteos anteriores
         </h1>
       </div>
@@ -29,5 +30,7 @@ export const InactiveGiveaways = () => {
         </div>
       </div>
     </div>
+  ) : (
+    ""
   );
 }

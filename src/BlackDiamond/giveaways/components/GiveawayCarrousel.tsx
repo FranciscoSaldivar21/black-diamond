@@ -3,15 +3,15 @@ import { useEffect, useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 
-export const GiveawayCarrousel = ({id} : props) => {
+export const GiveawayCarrousel = ({ id }: props) => {
   const [images, setImages] = useState([{ image_name: "" }]);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const getImages = async () => {
     try {
       const { data } = await axios.get(
         "http://localhost:3000/api/giveaway/images/" + id
       );
+      console.log(data)
       setImages(data);
     } catch (error) {
       console.log(error);
@@ -22,44 +22,25 @@ export const GiveawayCarrousel = ({id} : props) => {
     getImages();
   }, []);
 
-  const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const nextSlide = () => {
-    const isLastSlide = currentIndex === images.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
 
 
+
   return (
-    <div className="h-[700px] w-full m-auto mt-10 relative group mb-16">
+    <div className="2xl:h-[880px] sm:h-[400px] md:h-[520px] lg:h-[640px] xl:h-[760px] h-[280px] mt-6 mb-16 m-auto group">
       <div
-        style={{
-          backgroundImage: `url(http://localhost:3000/uploads/${images[currentIndex].image_name})`,
-        }}
-        className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
+        style={{ backgroundImage: `url(http://localhost:3000/uploads/${images[currentIndex].image_name})` }}
+        className="w-full h-full rounded-2xl bg-center bg-cover"
       ></div>
-      {/* Left Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactLeft onClick={prevSlide} size={30} />
-      </div>
-      {/* Right Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactRight onClick={nextSlide} size={30} />
-      </div>
       <div className="flex top-4 justify-center py-2">
-        {images.map((image, imageIndex) => (
+        {images.map((image, i) => (
           <div
-            key={imageIndex}
-            onClick={() => goToSlide(imageIndex)}
+            key={i}
+            onClick={() => goToSlide(i)}
             className="text-2xl cursor-pointer"
           >
             <RxDotFilled />

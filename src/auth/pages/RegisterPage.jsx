@@ -173,20 +173,20 @@ export const RegisterPage = () => {
   return (
     <Layout>
       <div>
-        <div className="flex flex-col items-center justify-center  w-4/6 px-6 py-8 mx-auto md:h-fit lg:py-0">
+        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-fit w-11/12">
           <NavLink className="font-titles text-2xl mb-4" to={"/"}>
             BLACK DIAMOND
           </NavLink>
-          <div className="w-full rounded-lg shadow border md:mt-0 sm:max-w-2xl xl:p-0 bg-gray-800 border-gray-700">
+          <div className="w-full rounded-lg shadow border md:mt-0 sm:max-w-2xl xl:p-0 bg-gray-200 border-gray-400">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl text-white">
+              <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl text-black">
                 Regístrate
               </h1>
               <form className="space-y-4 md:space-y-6" action="#">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block mb-2 text-sm font-medium text-white"
+                    className="block mb-2 text-sm font-medium text-gray-700"
                   >
                     Tu nombre
                   </label>
@@ -194,14 +194,14 @@ export const RegisterPage = () => {
                     value={name}
                     onChange={({ target }) => setName(target.value)}
                     type="text"
-                    className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                    className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
                     placeholder="Juan Perez"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block mb-2 text-sm font-medium text-white"
+                    className="block mb-2 text-sm font-medium text-gray-700"
                   >
                     Celular
                   </label>
@@ -209,16 +209,16 @@ export const RegisterPage = () => {
                     value={phone}
                     onChange={({ target }) => setPhone(target.value)}
                     type="tel"
-                    className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                    className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
                     placeholder="Tu numero de celular"
                   />
                 </div>
-                <p className="text-white">Domicilio</p>
+                <p className="text-gray-800">Domicilio</p>
                 <div className="flex">
                   <div className="flex-1">
                     <label
                       htmlFor="street"
-                      className="block mb-2 text-sm font-medium text-white"
+                      className="block mb-2 text-sm font-medium text-gray-700"
                     >
                       País
                     </label>
@@ -226,7 +226,7 @@ export const RegisterPage = () => {
                       value={country}
                       onChange={({ target }) => setCountry(target.value)}
                       type="text"
-                      className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                      className=" border sm:text-sm rounded-lg  block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
                       placeholder="México"
                     />
                   </div>{" "}
@@ -234,7 +234,7 @@ export const RegisterPage = () => {
                   <div className="ml-5 mb-2">
                     <label
                       htmlFor="number"
-                      className="block mb-2 text-sm font-medium text-white"
+                      className="block mb-2 text-sm font-medium text-gray-700"
                     >
                       Código postal
                     </label>
@@ -242,7 +242,7 @@ export const RegisterPage = () => {
                       value={postalCode}
                       onChange={({ target }) => setPostalCode(target.value)}
                       type="number"
-                      className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
                       placeholder="45403"
                     />
                   </div>
@@ -251,7 +251,7 @@ export const RegisterPage = () => {
                   <div className="flex-1">
                     <label
                       htmlFor="street"
-                      className="block mb-2 text-sm font-medium text-white"
+                      className="block mb-2 text-sm font-medium text-gray-700"
                     >
                       Calle
                     </label>
@@ -259,14 +259,14 @@ export const RegisterPage = () => {
                       value={street}
                       onChange={({ target }) => setStreet(target.value)}
                       type="text"
-                      className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
                       placeholder="Guayaba"
                     />
                   </div>{" "}
                   {/*Fin de calle*/}
                   <div className="flex-1 ml-5">
                     <label
-                      className="block mb-2 text-sm font-medium text-white"
+                      className="block mb-2 text-sm font-medium text-gray-700"
                     >
                       Municipio
                     </label>
@@ -274,7 +274,7 @@ export const RegisterPage = () => {
                       value={municipio}
                       onChange={({ target }) => setMunicipio(target.value)}
                       type="text"
-                      className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
                       placeholder="Asunción"
                     />
                   </div>
@@ -282,7 +282,7 @@ export const RegisterPage = () => {
                 <div className="flex">
                   <div className="flex-1">
                     <label
-                      className="block mb-2 text-sm font-medium text-white"
+                      className="block mb-2 text-sm font-medium text-gray-700"
                     >
                       Colonia
                     </label>
@@ -290,7 +290,7 @@ export const RegisterPage = () => {
                       value={colonia}
                       onChange={({ target }) => setColonia(target.value)}
                       type="text"
-                      className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                      className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
                       placeholder="Lomas de los pájaros"
                     />
                   </div>{" "}
@@ -298,7 +298,7 @@ export const RegisterPage = () => {
                   <div className="flex-1 ml-5">
                     <label
                       htmlFor="number"
-                      className="block mb-2 text-sm font-medium text-white"
+                      className="block mb-2 text-sm font-medium text-gray-700"
                     >
                       Estado
                     </label>
@@ -306,7 +306,7 @@ export const RegisterPage = () => {
                       value={state}
                       onChange={({ target }) => setState(target.value)}
                       type="text"
-                      className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
                       placeholder="Oaxaca"
                     />
                   </div>
@@ -314,7 +314,7 @@ export const RegisterPage = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-white"
+                    className="block mb-2 text-sm font-medium text-gray-700"
                   >
                     Tu correo
                   </label>
@@ -324,7 +324,7 @@ export const RegisterPage = () => {
                     type="email"
                     name="email"
                     id="email"
-                    className=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                    className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
                     placeholder="name@mail.com"
                     required={true}
                   />
@@ -332,7 +332,7 @@ export const RegisterPage = () => {
                 <div>
                   <label
                     htmlFor="password"
-                    className="block mb-2 text-sm font-medium text-white"
+                    className="block mb-2 text-sm font-medium text-gray-700"
                   >
                     Contraseña
                   </label>
@@ -343,7 +343,7 @@ export const RegisterPage = () => {
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                    className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
                     required={true}
                     autoComplete="false"
                   />
@@ -351,7 +351,7 @@ export const RegisterPage = () => {
                 <div>
                   <label
                     htmlFor="confirm-password"
-                    className="block mb-2 text-sm font-medium text-white"
+                    className="block mb-2 text-sm font-medium text-gray-700"
                   >
                     Confirma tu contraseña
                   </label>
@@ -362,7 +362,7 @@ export const RegisterPage = () => {
                     name="confirm-password"
                     id="confirm-password"
                     placeholder="••••••••"
-                    className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                    className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-700"
                     required={true}
                     autoComplete="false"
                   />
@@ -371,15 +371,15 @@ export const RegisterPage = () => {
                 <button
                   onClick={(event) => handleSubmit(event)}
                   type="submit"
-                  className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-800"
+                  className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gray-800 hover:bg-gray-900 focus:ring-gray-800"
                 >
                   Registrarme
                 </button>
-                <p className="text-sm font-light text-gray-400">
+                <p className="text-sm font-light text-gray-600">
                   Ya tienes una cuenta?{" "}
                   <a
                     onClick={() => navigate("/auth")}
-                    className="font-medium text-primary-600 hover:underline text-gray-200 cursor-pointer"
+                    className="font-medium text-primary-600 hover:underline text-darkGold cursor-pointer"
                   >
                     Inicia sesión
                   </a>

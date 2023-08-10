@@ -25,10 +25,12 @@ export const MyShopping = () => {
     }, [isLoading])
     
   return (
-    <div className="grid grid-cols-3 gap-3 items-start mt-4">
-        {
-            sales.map((sale) => <SaleCard sale={sale} key={sale.id} />)
-        }
-    </div>
+    sales.length > 0 ?
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 mt-4">
+            {
+                sales.map((sale) => <SaleCard sale={sale} key={sale.id} />)
+            }
+        </div>
+    : <div className="h-[300px] md:h-[318px]"></div>
   );
 }

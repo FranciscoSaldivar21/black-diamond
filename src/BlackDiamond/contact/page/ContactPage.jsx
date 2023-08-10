@@ -5,9 +5,9 @@ import { Form } from "../components"
 export const ContactPage = () => {
   return (
     <Layout>
-      <div>
+      <div className="md:mb-12 mb-8">
         <Form />
       </div>
     </Layout>
-  )
+  );
 }

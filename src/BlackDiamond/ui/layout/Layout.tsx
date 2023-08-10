@@ -8,10 +8,10 @@ interface LayoutProps {
 
 export const Layout = ({ children } : LayoutProps) => {
   return (
-    <div className="w-full">
+    <div className="w-full bg-background">
       <NavBar />
       <WhatsApp />
-      <div className="w-full mt-12">
+      <div className="w-full mb-8">
         {children}
       </div>
       <Footer />

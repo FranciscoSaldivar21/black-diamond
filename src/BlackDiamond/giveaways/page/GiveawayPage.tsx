@@ -26,29 +26,41 @@ export const GiveawayPage = () => {
 
   return (
     <Layout>
-      <div className="w-5/6 m-auto">
+      <div className="mt-12 w-11/12 mx-auto">
         <div className="">
-          <p className="font-titles text-4xl">{car}</p>
+          <p className="font-titles text-3xl sm:text-4xl lg:text-5xl uppercase">{car}</p>
         </div>
         <GiveawayCarrousel id={id}/>
         <div className="">
-          <p className="mb-5 font-titles font-semibold text-xl">Especificaciones: </p>
-          <p>{description}</p>
+          <p className="mb-5 font-subTitles font-semibold text-2xl uppercase">Especificaciones: </p>
+          <p className="text-md md:text-xl">{description}</p>
         </div>
         <div className="mt-8">
-          <p className="mb-5 font-titles font-semibold text-xl">Sorteo: </p>
-          <p><span className="font-semibold">Fecha de sorteo: </span>{giveaway_date}</p>
-          <p><span className="font-semibold">Publicación del sorteo: </span>{creation_date}</p>
-          <p><span className="font-semibold">Precio por boleto: </span>${ticket_price}</p>
+          <p className="mb-5 font-subTitles font-semibold text-2xl uppercase">Sorteo: </p>
+          <p className="text-md md:text-xl"><span className="font-semibold text-md md:text-xl">Fecha de sorteo: </span>{giveaway_date}</p>
+          <p className="text-md md:text-xl"><span className="font-semibold text-md md:text-xl">Publicación del sorteo: </span>{creation_date}</p>
+          <p className="text-md md:text-xl"><span className="font-semibold text-md md:text-xl">Precio por boleto: </span>${ticket_price}</p>
           {
             status === 1 
-            ? <p className="text-green-500"><span className="font-semibold text-black">Estado del sorteo: </span>Activo</p>
-            : <p className="text-red-500"><span className="font-semibold text-black">Estado del sorteo: </span>Terminado</p>
+              ? <p className="text-green-500 text-md md:text-xl"><span className="font-semibold text-black text-md md:text-xl">Estado del sorteo: </span>Activo</p>
+              : <p className="text-red-500 text-md md:text-xl"><span className="font-semibold text-black text-md md:text-xl">Estado del sorteo: </span>Terminado</p>
           }
         </div>
         <div className="mt-8">
-          <p className="mb-5 font-titles font-semibold text-xl">Boletos</p>
-          <Tickets />
+          <div>
+            <p className="text-md md:text-xl">Costo por boleto <span className="font-bold text-md md:text-xl">$275</span></p>
+            <p className="pt-1 text-sm sm:text-base text-md md:text-xl">
+              En la compra de <span className="font-semibold">1</span> Boleto + <span className="font-semibold">5</span> boletos de regalo = <span className="font-semibold">6</span> oportunidades<br/>
+              En la compra de <span className="font-semibold">3</span> Boletos + <span className="font-semibold">15</span> boletos de regalo = <span className="font-semibold">18</span> oportunidades<br/>
+              En la compra de <span className="font-semibold">5</span> Boletos + <span className="font-semibold">25</span> boletos de regalo = <span className="font-semibold">30</span> oportunidades<br/>
+              En la compra de <span className="font-semibold">8</span> Boletos + <span className="font-semibold">40</span> boletos de regalo = <span className="font-semibold">48</span> oportunidades<br/>
+              En la compra de <span className="font-semibold">10</span> Boletos + <span className="font-semibold">50</span> boletos de regalo = <span className="font-semibold">60</span> oportunidades<br/>
+            </p>
+          </div>
+          <div className="pt-10">
+            <p className="mb-5 font-subTitles font-semibold text-2xl uppercase">Boletos</p>
+            <Tickets />
+          </div>
         </div>
       </div>
     </Layout>

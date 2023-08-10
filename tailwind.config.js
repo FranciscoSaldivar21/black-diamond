@@ -16,11 +16,14 @@ module.exports = {
       },
       fontFamily: {
         titles: ["Old Standard TT", "serif"],
-        playFair: ["Playfair Display", "serif"],
-        navBarTexts: ["Cormorant Garamond", "serif"],
+        subTitles: ["Playfair Display", "serif"],
+        navBarTexts: ["Gothic A1", "sans-serif"],
       },
       backgroundImage: {
-        "navBar": "url('/src/assets/navBarImage.jpg')",
+        navBar: "url('/src/assets/navBarImage.jpg')",
+      },
+      gridTemplateColumns: {
+        18: "repeat(18, 1fr)",
       },
     },
   },
