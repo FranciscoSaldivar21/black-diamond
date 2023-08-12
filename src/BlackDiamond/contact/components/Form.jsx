@@ -47,7 +47,7 @@ export const Form = () => {
   } 
 
   return (
-    <div className="w-11/12 md:w-9/12 lg:w-7/12 mx-auto mt-6 bg-gray-200 rounded-lg border border-gray-400">
+    <div className="w-11/12 md:w-9/12 lg:w-7/12 mx-auto mt-6 bg-gray-100 rounded-lg border border-gray-200">
       <div className="py-8 lg:py-8 px-4 mx-auto max-w-screen-md">
         <h2 className="mb-8 text-2xl md:text-3xl lg:text-4xl tracking-tight font-bold font-subTitles text-center text-gray-900">
           Contactanos para mas información
@@ -108,7 +108,7 @@ export const Form = () => {
           <button
             onClick={(event) => handleSubmit(event)}
             type="submit"
-            className="w-full text-white bg-primary-600 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gray-800"
+            className="w-full font-semibold  bg-primary-600 hover:bg-lightGold focus:ring-4 focus:outline-none focus:ring-primary-300 hover:font-bold rounded-lg text-sm px-5 py-2.5 text-center bg-darkGold text-black"
           >
             Enviar mensaje
           </button>

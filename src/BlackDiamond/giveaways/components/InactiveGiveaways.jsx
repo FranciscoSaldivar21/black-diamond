@@ -18,7 +18,7 @@ export const InactiveGiveaways = () => {
   return giveaways.length > 0 ? (
     <div>
       <div>
-        <h1 className="font-subTitles font-semibold text-3xl md:text-3xl mb-6 uppercase">
+        <h1 className="font-subTitles font-semibold text-3xl md:text-3xl mb-6 uppercase text-center">
           Sorteos anteriores
         </h1>
       </div>

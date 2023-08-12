@@ -164,16 +164,14 @@ export const TicketsDrawer = (data: props) => {
     }
 
     useEffect(() => {
-        if(selectedTickets.length <= 2)
-            setTextAlert2("Tienes 5 boletos de regalo");
         if(selectedTickets.length > 2 && selectedTickets.length < 5)
-            setTextAlert2("Tienes 15 boletos de regalo");
+            setTextAlert2("Tienes 7 boletos de regalo");
         if(selectedTickets.length >= 5 && selectedTickets.length < 8)
-            setTextAlert2("Tienes 25 boletos de regalo");
+            setTextAlert2("Tienes 15 boletos de regalo");
         if(selectedTickets.length >= 8 && selectedTickets.length < 10)
-            setTextAlert2("Tienes 40 boletos de regalo");
+            setTextAlert2("Tienes 22 boletos de regalo");
         if(selectedTickets.length >= 10)
-            setTextAlert2("Tienes 50 boletos de regalo");
+            setTextAlert2("Tienes 30 boletos de regalo y bono SUPER TRIPLE BLACK DIAMOND");
         
     }, [selectedTickets]);
 

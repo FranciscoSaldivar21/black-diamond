@@ -56,7 +56,6 @@ export const SalePage = () => {
                 <p><span className="font-bold md:text-lg">ID de compra: </span>{ sale.id }</p>
                 <p><span className="font-bold md:text-lg">Fecha de compra: </span>{ sale.sale_date }</p>
                 <p><span className="font-bold md:text-lg">Total de compra: </span>${ total }</p>
-                <p><span className="font-bold md:text-lg">Beneficio: </span>{ sale.benefic }</p>
             </div>
             <div className="mt-4">
                 <p className="text-xl font-semibold uppercase font-subTitles md:text-3xl mb-2">Sorteo </p>
@@ -71,6 +70,10 @@ export const SalePage = () => {
                 
             </div>
             <div className="mt-4 uppercase font-extrabold md:text-lg">
+                {
+                    tickets.length >= 10 ? <p className="text-darkGold">Tienes beneficio SUPER TRIPLE BLACK DIAMOND por comprar más de 10 boletos.</p>
+                    : ""
+                }
                 {
                     sale.benefic === 1 ? <p>Tienes beneficio GOLD DIAMOND por comprar en la primer semana</p>
                     : sale.benefic === 2 ? <p>Tienes beneficio SILVER DIAMOND por comprar en la segunda semana</p>

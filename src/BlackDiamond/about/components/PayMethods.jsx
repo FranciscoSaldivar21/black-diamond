@@ -3,7 +3,7 @@ import { FaCcMastercard, FaCcVisa, FaCreditCard } from "react-icons/fa";
 export const PayMethods = () => {
   return (
     <div className="flex-row mt-8 mb-12">
-      <p className="text-left font-semibold text-xl font-subTitles uppercase">
+      <p className="text-center md:text-left font-semibold text-xl font-subTitles uppercase">
         Métodos de pago
       </p>
       <p className="mt-3 text-lg text-justify">Manejamos pagos cómodos que se realizan desde nuestra página web y se reflejan al instante.</p>

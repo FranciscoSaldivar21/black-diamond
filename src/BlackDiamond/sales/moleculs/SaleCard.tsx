@@ -46,7 +46,7 @@ export const SaleCard = ({ sale }: props) => {
             <div className="flex justify-center align-bottom">
                 <button
                     onClick={() => navigate('/sale', { state: { saleId: sale.id } })}
-                    className="uppercase rounded w-60 h-8 mb-4 text-white transition ease-in-out delay-50 bg-blue-700 hover:-translate-y-1 hover:scale-110 hover:bg-blue-500 duration-100"
+                    className="uppercase rounded w-60 h-8 mb-4 text-black transition ease-in-out delay-50 bg-darkGold hover:-translate-y-1 hover:scale-110 hover:bg-lightGold duration-100"
                 >
                     Ver compra
                 </button>

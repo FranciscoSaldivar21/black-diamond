@@ -150,8 +150,10 @@ export const UserPage = () => {
 
     return (
       <Layout>
-        <div className="w-11/12 mx-auto pt-8 h-auto mb-4 md:mb-16">
-          <p className="font-titles text-3xl md:text-4xl uppercase">Mi perfil</p>
+        <div className="w-11/12 mx-auto pt-8 h-auto mb-4 md:mb-16 2xl:pb-24">
+          <p className="font-titles text-3xl md:text-4xl uppercase">
+            Mi perfil
+          </p>
           <div className="mt-6">
             <p className="text-xl">
               Mi nombre: <span className="font-bold">{name}</span>
@@ -180,10 +182,14 @@ export const UserPage = () => {
           </div>
           {edit === true ? (
             <div className="mt-8">
-              <p className="font-titles text-3xl md:text-4xl uppercase">Nuevos datos</p>
+              <p className="font-titles text-3xl md:text-4xl uppercase">
+                Nuevos datos
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-1 mt-4">
                 <div className="flex flex-col mb-4">
-                  <label className="text-lg font-bold uppercase">Nuevo nombre</label>
+                  <label className="text-lg font-bold uppercase">
+                    Nuevo nombre
+                  </label>
                   <input
                     className="mt-1 text-lg py-2 px-4 border border-solid border-slate-600 rounded-lg focus:border-blue-600"
                     type="text"
@@ -192,7 +198,9 @@ export const UserPage = () => {
                   />
                 </div>
                 <div className="flex flex-col mb-4">
-                  <label className="text-lg font-bold uppercase">Nuevo telefono</label>
+                  <label className="text-lg font-bold uppercase">
+                    Nuevo telefono
+                  </label>
                   <input
                     className="mt-1 text-lg py-2 px-4 border border-solid border-slate-600 rounded-lg focus:border-blue-600"
                     type="text"
@@ -201,7 +209,9 @@ export const UserPage = () => {
                   />
                 </div>
                 <div className="flex flex-col mb-4">
-                  <label className="text-lg font-bold uppercase">Nuevo correo</label>
+                  <label className="text-lg font-bold uppercase">
+                    Nuevo correo
+                  </label>
                   <input
                     className="mt-1 text-lg py-2 px-4 border border-solid border-slate-600 rounded-lg focus:border-blue-600"
                     type="email"
@@ -210,7 +220,9 @@ export const UserPage = () => {
                   />
                 </div>
                 <div className="flex flex-col mb-4">
-                  <label className="text-lg font-bold uppercase">Nueva calle</label>
+                  <label className="text-lg font-bold uppercase">
+                    Nueva calle
+                  </label>
                   <input
                     className="mt-1 text-lg py-2 px-4 border border-solid border-slate-600 rounded-lg focus:border-blue-600"
                     type="text"
@@ -219,7 +231,9 @@ export const UserPage = () => {
                   />
                 </div>
                 <div className="flex flex-col mb-4">
-                  <label className="text-lg font-bold uppercase">Nueva colonia</label>
+                  <label className="text-lg font-bold uppercase">
+                    Nueva colonia
+                  </label>
                   <input
                     className="mt-1 text-lg py-2 px-4 border border-solid border-slate-600 rounded-lg focus:border-blue-600"
                     type="text"
@@ -228,7 +242,9 @@ export const UserPage = () => {
                   />
                 </div>
                 <div className="flex flex-col mb-4">
-                  <label className="text-lg font-bold uppercase">Nuevo municipio</label>
+                  <label className="text-lg font-bold uppercase">
+                    Nuevo municipio
+                  </label>
                   <input
                     className="mt-1 text-lg py-2 px-4 border border-solid border-slate-600 rounded-lg focus:border-blue-600"
                     type="text"
@@ -237,7 +253,9 @@ export const UserPage = () => {
                   />
                 </div>
                 <div className="flex flex-col mb-4">
-                  <label className="text-lg font-bold uppercase">Nuevo estado</label>
+                  <label className="text-lg font-bold uppercase">
+                    Nuevo estado
+                  </label>
                   <input
                     className="mt-1 text-lg py-2 px-4 border border-solid border-slate-600 rounded-lg focus:border-blue-600"
                     type="text"
@@ -257,7 +275,9 @@ export const UserPage = () => {
                   />
                 </div>
                 <div className="flex flex-col mb-4">
-                  <label className="text-lg font-bold uppercase">Nuevo país</label>
+                  <label className="text-lg font-bold uppercase">
+                    Nuevo país
+                  </label>
                   <input
                     className="mt-1 text-lg py-2 px-4 border border-solid border-slate-600 rounded-lg focus:border-blue-600"
                     type="text"

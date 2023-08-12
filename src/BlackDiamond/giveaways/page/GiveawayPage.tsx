@@ -6,6 +6,7 @@ import { GiveawayCarrousel } from "../components/GiveawayCarrousel";
 import { Layout } from "../../ui/layout/Layout";
 import { giveawayStore } from '../../../store/giveawayStore';
 import { Tickets } from "../components/Tickets";
+import { Promotions } from "../components/Promotions";
 
 export const GiveawayPage = () => {
   const { id } = useParams();
@@ -48,16 +49,10 @@ export const GiveawayPage = () => {
         </div>
         <div className="mt-8">
           <div>
-            <p className="text-md md:text-xl">Costo por boleto <span className="font-bold text-md md:text-xl">$275</span></p>
-            <p className="pt-1 text-sm sm:text-base text-md md:text-xl">
-              En la compra de <span className="font-semibold">1</span> Boleto + <span className="font-semibold">5</span> boletos de regalo = <span className="font-semibold">6</span> oportunidades<br/>
-              En la compra de <span className="font-semibold">3</span> Boletos + <span className="font-semibold">15</span> boletos de regalo = <span className="font-semibold">18</span> oportunidades<br/>
-              En la compra de <span className="font-semibold">5</span> Boletos + <span className="font-semibold">25</span> boletos de regalo = <span className="font-semibold">30</span> oportunidades<br/>
-              En la compra de <span className="font-semibold">8</span> Boletos + <span className="font-semibold">40</span> boletos de regalo = <span className="font-semibold">48</span> oportunidades<br/>
-              En la compra de <span className="font-semibold">10</span> Boletos + <span className="font-semibold">50</span> boletos de regalo = <span className="font-semibold">60</span> oportunidades<br/>
-            </p>
+            <p className="text-md md:text-xl">Costo por boleto <span className="font-bold text-md md:text-xl">$289</span></p>
+            <Promotions />
           </div>
-          <div className="pt-10">
+          <div className="pt-5">
             <p className="mb-5 font-subTitles font-semibold text-2xl uppercase">Boletos</p>
             <Tickets />
           </div>
