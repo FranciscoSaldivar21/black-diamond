@@ -14,7 +14,7 @@ export const GaleryImages = () => {
         <div className="grid grid-cols-2 grid-rows-1 col-span-3 gap-4">
           <div className="cover w-full h-1/2 bg-">
             <img
-              src={image7
+              src={image7}
               className="w-full h-auto col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg"
             />
           </div>
