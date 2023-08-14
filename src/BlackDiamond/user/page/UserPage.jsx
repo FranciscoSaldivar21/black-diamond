@@ -3,6 +3,7 @@ import { userStore } from "../../../store/userStore";
 import axios from "axios";
 import { Layout } from "../../ui/layout/Layout";
 import { isValidEmail } from "../../../auth/helpers/validateEmail";
+import { apiURL } from "../../../api/config";
 
 export const UserPage = () => {
     const reset = userStore((state) => state.reset);
@@ -12,6 +13,7 @@ export const UserPage = () => {
     const email = userStore((state) => state.email);
     const phone = userStore((state) => state.phone);
     const adress = userStore((state) => state.adress);
+    const token = userStore((state) => state.token);
     const adress2 = adress.split("|");
     const setUserPhone = userStore((state) => state.setPhone);
     const setUserName = userStore((state) => state.setName);
@@ -119,14 +121,22 @@ export const UserPage = () => {
                 setAlert("");
             }, 4000);
             return;
-        }
+        } 
 
-        const { status } = await axios.put("http://localhost:3000/api/users/" + id, {
+        const { status } = await axios.put(
+          `${apiURL}users/${id}`,
+          {
             name: newName,
             phone: newPhone,
             email: newEmail,
-            adress: `Calle: ${newStreet}|Colonia: ${newColonia}|Municipio: ${newMunicipio}|Estado: ${newState}|CP: ${newPostalCode}|País: ${newCountry}`
-        });
+            adress: `Calle: ${newStreet}|Colonia: ${newColonia}|Municipio: ${newMunicipio}|Estado: ${newState}|CP: ${newPostalCode}|País: ${newCountry}`,
+          },
+          {
+            headers: {
+              "x-token": token,
+            },
+          }
+        );
 
         if(status === 204){ //Actualizar estado de la aplicación
             setUserPhone(newPhone);

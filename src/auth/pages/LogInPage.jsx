@@ -5,6 +5,7 @@ import axios from "axios";
 import { isValidEmail } from "../helpers/validateEmail";
 import { userStore } from "../../store/userStore";
 import { Layout } from "../../BlackDiamond/ui/layout/Layout";
+import { apiURL } from "../../api/config";
 
 export const LogInPage = () => {
     const navigate = useNavigate();
@@ -46,7 +47,7 @@ export const LogInPage = () => {
     //Peticion al servidor
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/users/auth",
+        `${apiURL}users/auth`,
         {
           email,
           password,

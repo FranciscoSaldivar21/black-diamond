@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { userStore } from "../../../store/userStore";
 import { SaleCard } from "../moleculs/SaleCard";
+import { apiURL } from "../../../api/config";
 
 export const MyShopping = () => {
     const userId = userStore((state) => state.id);
@@ -11,7 +12,7 @@ export const MyShopping = () => {
 
 
     const getSales = async () => {
-        const { data } = await axios.get(`http://localhost:3000/api/sales/${userId}`, {
+        const { data } = await axios.get(`${apiURL}sales/${userId}`, {
             headers: {
                 "x-token": token,
             },

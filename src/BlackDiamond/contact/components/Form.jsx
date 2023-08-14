@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { isValidEmail } from "../../../auth/helpers/validateEmail";
 import axios from "axios";
+import { apiURL } from "../../../api/config";
 
 export const Form = () => {
   const [email, setEmail] = useState("");
@@ -34,7 +35,7 @@ export const Form = () => {
     form.append("message", message);
 
     try {
-      const {data} = await axios.post("http://localhost:3000/api/contact", form);
+      const { data } = await axios.post(`${apiURL}contact`, form);
       console.log(data);
       setSuccessAlert(data.msg);
       setEmail("");

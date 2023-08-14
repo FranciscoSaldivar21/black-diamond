@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { GiveawayCard } from "./GiveawayCard";
 import axios from "axios";
+import { apiURL } from "../../../api/config";
 //Colocar código aqui de la API para traer los sorteos activos
 
 export const ActiveGiveaways = ({margin = true} : props) => {
-  console.log("Margin " + margin)
   const [giveaways, setGiveaways] = useState([]);
 
   const getGiveaways = async () => {
-    const { data } = await axios.get("http://localhost:3000/api/giveaway/all/1");
+    const { data } = await axios.get(`${apiURL}giveaway/all/1`);
     setGiveaways(data);
   };
 

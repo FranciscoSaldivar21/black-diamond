@@ -4,6 +4,7 @@ import axios from "axios";
 
 import { isValidEmail } from "../helpers/validateEmail";
 import { Layout } from "../../BlackDiamond/ui/layout/Layout";
+import { apiURL } from "../../api/config";
 
 export const IForgotMyPassword = () => {
   const [email, setEmail] = useState("");
@@ -36,7 +37,7 @@ export const IForgotMyPassword = () => {
     //Peticion al servidor
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/users/forgotPassword/${email}`
+        `${apiURL}users/forgotPassword/${email}`
       );
       console.log(response);
 

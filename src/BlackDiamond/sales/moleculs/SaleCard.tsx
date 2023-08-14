@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { apiURL } from "../../../api/config";
 
 export const SaleCard = ({ sale }: props) => {
     const navigate = useNavigate();
@@ -8,9 +9,7 @@ export const SaleCard = ({ sale }: props) => {
 
     const getImages = async () => {
         try {
-            const { data } = await axios.get(
-                "http://localhost:3000/api/giveaway/images/" + sale.giveaway_id
-            );
+            const { data } = await axios.get(`${apiURL}giveaway/images/${sale.giveaway_id}`);
             setImages(data);
         } catch (error) {
             console.log(error);
@@ -26,13 +25,14 @@ export const SaleCard = ({ sale }: props) => {
         <div className="rounded overflow-hidden shadow-lg">
             <img
                 className="w-full"
-                src={`http://localhost:3000/uploads/${images[0].image_name}`}
+                src={`https://black-diamond-back-production.up.railway.app/uploads/${images[0].image_name}`}
                 alt="Sunset in the mountains"
             />
             <div className="px-6 py-4">
                 <p className="font-bold text-xl mb-2">{sale.car}</p>
                 <p className="text-justify">Id de compra: {sale.id}</p>
                 <p className="text-justify">Fecha de compra: {sale.sale_date}</p>
+                <p className="text-justify">Estado: {sale.saleStatus === 1 ? <span className="text-green-500">Pagada</span> : <span className="text-red-500">Pendiente de pago</span>}</p>
                 <p className="text-justify">{sale.description}</p>
                 <p className="mt-2">
                     Status:{" "}

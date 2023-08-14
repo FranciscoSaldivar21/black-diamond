@@ -7,6 +7,7 @@ import { Layout } from "../../ui/layout/Layout";
 import { giveawayStore } from '../../../store/giveawayStore';
 import { Tickets } from "../components/Tickets";
 import { Promotions } from "../components/Promotions";
+import { apiURL } from "../../../api/config";
 
 export const GiveawayPage = () => {
   const { id } = useParams();
@@ -16,7 +17,7 @@ export const GiveawayPage = () => {
 
   const getGiveaway = async () => {
     const { data } = await axios.get(
-      "http://localhost:3000/api/giveaway/" + id
+      `${apiURL}giveaway/${id}`
     );
     setGiveaway(data);
   };

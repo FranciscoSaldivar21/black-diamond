@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { GiveawayCard } from "./GiveawayCard";
+import { apiURL } from "../../../api/config";
 
 
 export const InactiveGiveaways = () => {
   const [giveaways, setGiveaways] = useState([]);
 
   const getGiveaways = async () => {
-    const { data } = await axios.get("http://localhost:3000/api/giveaway/all/0");
+    const { data } = await axios.get(`${apiURL}giveaway/all/0`);
     setGiveaways(data);
   };
 

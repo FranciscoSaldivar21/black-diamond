@@ -5,6 +5,7 @@ import { TicketItem } from "./TicketItem";
 import { userStore } from "../../../store/userStore";
 import axios from "axios";
 import { data } from 'autoprefixer';
+import { apiURL } from "../../../api/config";
 
 export const TicketsDrawer = (data: props) => {
     const token = userStore((state) => state.token);
@@ -75,7 +76,7 @@ export const TicketsDrawer = (data: props) => {
     //Extraer tickets vendidos
     const getTickets = async (offset) => {
         try {
-            const { data } = await axios.get(`http://localhost:3000/api/giveaway/tickets/${id}/${offset}`);
+            const { data } = await axios.get(`${apiURL}giveaway/tickets/${id}/${offset}`);
             //Recorrer arreglo para guardar boletos
             data.forEach((element, i) => {
                 setSoldTickets((prevTickets) => [...prevTickets, element.ticket_number]);
@@ -90,7 +91,7 @@ export const TicketsDrawer = (data: props) => {
         setTicketSearch(ticket);
         if(ticket && ticket > 0 && ticket <= totalTickets){
             try {
-                const { data } = await axios.get(`http://localhost:3000/api/giveaway/ticket/${id}/${ticket}`);
+                const { data } = await axios.get(`${apiURL}giveaway/ticket/${id}/${ticket}`);
                 console.log(data.found);
                 setTicketFound(data.found);
             } catch (error) {
@@ -103,16 +104,15 @@ export const TicketsDrawer = (data: props) => {
 
     //Función para generar la compra
     const handleBuyClick = async () => {
-        const response = confirm("Serás redirigido a una pagína donde podrás hacer tu pago seguro. ¿Deseas continuar?");
+        const pageConfirm = confirm("¿Desea terminar la compra?");
 
-        if(!response){
-            setTextAlert("Debes aceptar para poder realizar tu pago");
+        if(!pageConfirm){
+            setTextAlert("Debe aceptar para generar la orden de compra");
             setTimeout(() => {
                 setTextAlert("");
             }, 4000);
             return;
         }
-
         //Comparar fechas
         //Fecha actual de la compra
         let actualDate = new Date().getTime();
@@ -145,13 +145,17 @@ export const TicketsDrawer = (data: props) => {
         }
 
         try {
-            const res = await axios.post(`http://localhost:3000/api/sales/create-checkout-session/${id}/${idUser}`, data, {
+            const response = await axios.post(`${apiURL}sales/create-checkout-session/${id}/${idUser}`, data, {
                 headers: {
                     "x-token": token,
                 },
             });
-            console.log(res.data.url);
-            window.location.href = res.data.url;
+            console.log(response.data);
+            navigate("/sale", {
+                state: {
+                    saleId: response.data.saleId
+                }
+            });
         } catch (error) {
             console.log(error)
             const {response} = error;

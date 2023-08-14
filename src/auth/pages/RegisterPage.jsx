@@ -5,6 +5,7 @@ import axios from "axios";
 import { userStore } from "../../store/userStore";
 import { isValidEmail } from "../helpers/validateEmail";
 import { Layout } from "../../BlackDiamond/ui/layout/Layout";
+import { apiURL } from "../../api/config";
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
@@ -142,7 +143,7 @@ export const RegisterPage = () => {
     //Peticion al servidor
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/users/register",
+        `${apiURL}users/register`,
         {
           name,
           phone,

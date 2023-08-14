@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { GiveawaysPage } from "../page/GiveawaysPage";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { apiURL } from "../../../api/config";
 
 interface ICarProps {
   id: number,
@@ -21,9 +22,7 @@ export const GiveawayCard = ({ giveaway } : ICarProps) => {
 
   const getImages = async () => {
     try {
-      const { data } = await axios.get(
-        "http://localhost:3000/api/giveaway/images/" + giveaway.id
-      );
+      const { data } = await axios.get(`${apiURL}giveaway/images/${giveaway.id}`);
       setImages(data);
     } catch (error) {
       console.log(error);
@@ -42,7 +41,7 @@ export const GiveawayCard = ({ giveaway } : ICarProps) => {
     <div className="rounded overflow-hidden shadow-lg">
       <img
         className="w-full"
-        src={`http://localhost:3000/uploads/${images[0].image_name}`}
+        src={`https://black-diamond-back-production.up.railway.app/uploads/${images[0].image_name}`}
         alt="Sunset in the mountains"
       />
       <div className="px-6 py-4">
