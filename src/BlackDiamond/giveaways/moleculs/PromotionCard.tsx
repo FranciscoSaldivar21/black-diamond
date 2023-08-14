@@ -1,10 +1,16 @@
+import ficha1 from "../../../assets/ficha-1.png";
+import ficha3 from "../../../assets/ficha-3.png";
+import ficha5 from "../../../assets/ficha-5.png";
+import ficha8 from "../../../assets/ficha-8.png";
+import ficha10 from "../../../assets/ficha-10.png";
+
 export const PromotionCard = ({buyTickets, giftTickets, image, total} : props) => {
     if(buyTickets === 1){
         return (
             <div className="p-2 border-2 border-collapse  rounded-lg flex flex-col items-center shadow-xl bg-gray-100 justify-center">
                 <div className="h-full flex flex-col justify-center items-center">
                     <div className="h-1/5 flex justify-center align-middle mt-2">
-                        <img src={`/src/assets/${image}`} className="w-16 h-16" />
+                        <img src={`../../../assets/${image}`} className="w-16 h-16" />
                     </div>
                     <div className="pt-10 h-3/5">
                         <p className="text-sm text-center">COMPRA {buyTickets} BOLETO</p>
