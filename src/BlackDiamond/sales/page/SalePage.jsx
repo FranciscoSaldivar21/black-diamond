@@ -59,7 +59,7 @@ export const SalePage = () => {
                     <p className="text-justify md:text-lg">Si ya enviaste tu comprobante y no cambia el estaus en 24 horas, envíanos mensaje por WhatsApp.</p>
                     <TransferData />
                     <button
-                        onClick={() => window.open(`https://api.whatsapp.com/send?phone=3322122459&text=Validar%20pago%20de%20la%20compra%20con%20ID:%20${saleId}%0A`)}
+                        onClick={() => window.open(`https://api.whatsapp.com/send?phone=3322122459&text=Validar%20pago%20de%20la%20compra%20con%20Folio:%20${saleId}%0A`)}
                         className="uppercase rounded w-full sm:w-80 h-8 my-2 text-black transition ease-in-out delay-50 bg-lightGold hover:-translate-y-1 hover:scale-110 hover:bg-darkGold duration-100"
                     >Enviar comprobante de pago</button>
                 </div> : 
