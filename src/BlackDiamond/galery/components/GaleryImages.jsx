@@ -1,10 +1,12 @@
+import image1 from "../../../assets/galery/imagen-shelby-1.jpg"
+
 export const GaleryImages = () => {
   return (
     <div className="flex flex-col gap-4 px-4">
       <div className="grid grid-cols-2 grid-rows-1 col-span-3 gap-4">
         <div className="cover w-full h-1/2 bg-">
           <img
-            src="https://black-diamond-production-971e.up.railway.app/src/assets/galery/imagen-shelby-7.jpg"
+            src={image1}
             loading="lazy"
             className="w-full h-auto col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg"
           />
