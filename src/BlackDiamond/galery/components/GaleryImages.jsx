@@ -11,7 +11,6 @@ import image3webp from "../../../assets/galery/imagen-shelby-3.webp";
 import image5webp from "../../../assets/galery/imagen-shelby-5.webp";
 import image6webp from "../../../assets/galery/imagen-shelby-6.webp";
 import image7webp from "../../../assets/galery/imagen-shelby-7.webp";
-import image8webp from "../../../assets/galery/imagen-shelby-8.webp";
 
 export const GaleryImages = () => {
   return (
@@ -20,7 +19,7 @@ export const GaleryImages = () => {
         {/* Imagenes de la izquierda */}
         <div className="grid grid-cols-2 grid-rows-1 col-span-3 gap-4">
           <div className="cover w-full h-1/2 bg-">
-            <picture>
+            <picture className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg">
               <source srcSet={image7webp} type="image/webp" />
               <img
                 src={image7}
@@ -29,8 +28,8 @@ export const GaleryImages = () => {
             </picture>
           </div>
           <div className="cover w-full h-auto">
-            <picture>
-              <source srcSet={image8webp} type="image/webp" />
+            <picture className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg">
+              <source srcSet={image7webp} type="image/webp" />
               <img
                 src={image8}
                 className="w-full h-full col-span-2 row-span-2 row-start-2 col-start-1 rounded-lg"
@@ -42,7 +41,7 @@ export const GaleryImages = () => {
       <div className="grid grid-cols-3 grid-rows-1 gap-4">
         {/* Imagen sola de la izquierda */}
         <div className="grid grid-cols-1 grid-rows-1 col-span-1">
-          <picture>
+          <picture className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg">
             <source srcSet={image2webp} type="image/webp" />
             <img
               src={image2}
@@ -52,14 +51,14 @@ export const GaleryImages = () => {
         </div>
         {/* Imagenes de la derecha */}
         <div className="grid grid-cols-1 grid-rows-2 col-span-2 gap-8">
-          <picture>
+          <picture className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg">
             <source srcSet={image1webp} type="image/webp" />
             <img
               src={image1}
               className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg"
             />
           </picture>
-          <picture>
+          <picture className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg">
             <source srcSet={image3webp} type="image/webp" />
             <img
               src={image3}
@@ -72,7 +71,7 @@ export const GaleryImages = () => {
         {/* Imagenes de la izquierda */}
         <div className="grid grid-cols-2 grid-rows-1 col-span-3 gap-4">
           <div className="cover w-full h-1/2 bg-">
-            <picture>
+            <picture className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg">
               <source srcSet={image5webp} type="image/webp" />
               <img
                 src={image5}
@@ -81,7 +80,7 @@ export const GaleryImages = () => {
             </picture>
           </div>
           <div className="cover w-full h-auto">
-            <picture>
+            <picture className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg">
               <source srcSet={image6webp} type="image/webp" />
               <img
                 src={image6}
