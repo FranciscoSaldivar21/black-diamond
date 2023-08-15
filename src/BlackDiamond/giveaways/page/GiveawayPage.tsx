@@ -50,7 +50,7 @@ export const GiveawayPage = () => {
         </div>
         <div className="mt-8">
           <div>
-            <p className="text-md md:text-xl">Costo por boleto <span className="font-bold text-md md:text-xl">$289</span></p>
+            <p className="text-md md:text-xl">Costo por boleto <span className="font-bold text-md md:text-xl">${ticket_price}</span></p>
             <Promotions />
           </div>
           <div className="pt-5">
