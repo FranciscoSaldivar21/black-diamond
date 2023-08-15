@@ -16,7 +16,7 @@ export const HomeItem = () => {
           Somos una empresa 100% mexicana ubicada en Guadalajara Jalisco
           dedicada al sorteo y rifa de vehículos de gama premium.
         </p>
-        <div className="mt-4 grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
+        <div className="mt-4 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-4">
           <div className="p-4 border-2 border-collapse  rounded-lg flex flex-col items-center shadow-xl bg-gray-100 justify-start">
             <p className="mt-8 font-subTitles text-xl uppercase font-bold">
               Misión
@@ -39,7 +39,7 @@ export const HomeItem = () => {
             </p>
           </div>
         </div>
-        <div className="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
+        <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-4">
           <div className="p-4 border-2 border-collapse  rounded-lg flex flex-col items-center shadow-xl bg-gray-100 justify-start">
             <p className="mt-8 font-subTitles text-xl uppercase font-bold text-center">
               ¿Por qué comprar un boleto con nosotros?

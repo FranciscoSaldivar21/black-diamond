@@ -6,7 +6,7 @@ export const PayMethods = () => {
       <p className="text-center md:text-left font-semibold text-xl font-subTitles uppercase">
         Métodos de pago
       </p>
-      <p className="mt-3 text-lg text-justify">Manejamos Tranferencias o depósitos bancarios que se reflejarán en máximo 24 horas.</p>
+      <p className="mt-3 text-lg text-justify">Manejamos tranferencias electrónicas o depósitos en el lugar de tu conveniencia que se reflejarán en máximo 24 horas.</p>
       <div className="flex mt-2">
         <div>
           <FaCcVisa size={30} />

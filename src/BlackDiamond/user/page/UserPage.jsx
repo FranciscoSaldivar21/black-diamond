@@ -160,23 +160,23 @@ export const UserPage = () => {
 
     return (
       <Layout>
-        <div className="w-11/12 mx-auto pt-8 h-auto mb-4 md:mb-16 2xl:pb-24">
-          <p className="font-titles text-3xl md:text-4xl uppercase">
+        <div className="w-11/12 mx-auto pt-4 h-auto mb-4 md:mb-16 2xl:pb-24">
+          <p className="font-titles text-3xl md:text-4xl uppercase text-center">
             Mi perfil
           </p>
-          <div className="mt-6">
-            <p className="text-xl">
+          <div className="mt-2">
+            <p className="text-lg md:text-xl">
               Mi nombre: <span className="font-bold">{name}</span>
             </p>
-            <p className="text-xl">
+            <p className="text-lg md:text-xl">
               Mi telefono: <span className="font-bold">{phone}</span>
             </p>
-            <p className="text-xl">
+            <p className="text-lg md:text-xl">
               Mi correo: <span className="font-bold">{email}</span>
             </p>
-            <p className="text-xl">Mi domicilio: </p>
+            <p className="text-lg md:text-xl">Mi domicilio: </p>
             {adress2.map((element, i) => (
-              <p className="text-xl" key={i}>
+              <p className="text-lg md:text-xl" key={i}>
                 {element}
               </p>
             ))}
@@ -191,7 +191,7 @@ export const UserPage = () => {
             </div>
           </div>
           {edit === true ? (
-            <div className="mt-8">
+            <div className="mt-4">
               <p className="font-titles text-3xl md:text-4xl uppercase">
                 Nuevos datos
               </p>
@@ -300,7 +300,7 @@ export const UserPage = () => {
           ) : (
             ""
           )}
-          <div className="mt-6 grid grid-cols-1 sm:flex sm:flex-row">
+          <div className="mt-3 grid grid-cols-1 sm:flex sm:flex-row">
             <button
               className="rounded-lg text-black py-2 px-4 bg-lightGold hover:bg-darkGold"
               onClick={
