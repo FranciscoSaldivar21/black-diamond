@@ -28,7 +28,7 @@ export const GiveawayPage = () => {
 
   return (
     <Layout>
-      <div className="mt-12 w-11/12 mx-auto">
+      <div className="mt-12 w-11/12 mx-auto md:mb-5">
         <div className="">
           <p className="font-titles text-3xl sm:text-4xl lg:text-5xl uppercase">{car}</p>
         </div>
