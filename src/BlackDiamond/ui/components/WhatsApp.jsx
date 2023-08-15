@@ -3,7 +3,7 @@ import { FaWhatsapp } from "react-icons/fa";
 export const WhatsApp = () => {
   // animate-bounce
   return (
-    <div className="fixed right-3 sm:right-5 md:right-12 bottom-12">
+    <div className="fixed right-3.5 sm:right-5 md:right-12 bottom-7">
       <div className="flex p-3 rounded-full items-center justify-end bg-green-500">
         <a
           target="_blank"
