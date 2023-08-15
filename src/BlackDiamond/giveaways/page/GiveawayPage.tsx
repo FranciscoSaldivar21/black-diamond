@@ -9,6 +9,7 @@ import { Tickets } from "../components/Tickets";
 import { Promotions } from "../components/Promotions";
 import { apiURL } from "../../../api/config";
 
+
 export const GiveawayPage = () => {
   const { id } = useParams();
   //Guarda en el estado del sorteo

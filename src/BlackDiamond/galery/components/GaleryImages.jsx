@@ -7,6 +7,7 @@ import image5webp from "../../../assets/galery/imagen-shelby-5.webp";
 import image6webp from "../../../assets/galery/imagen-shelby-6.webp";
 import image7webp from "../../../assets/galery/imagen-shelby-7.webp";
 
+
 export const GaleryImages = () => {
   return (
     <div className="flex flex-col gap-1.5 md:gap-2.5 xl:gap-4 p-1">
