@@ -10,9 +10,9 @@ import image7webp from "../../../assets/galery/imagen-shelby-7.webp";
 export const GaleryImages = () => {
   return (
     <div className="flex flex-col gap-1">
-      <div className="grid grid-cols-3 grid-rows-1 gap-4">
+      <div className="grid grid-cols-3 grid-rows-1 gap-4 px-2">
         {/* Imagenes de la izquierda */}
-        <div className="grid grid-cols-2 grid-rows-1 col-span-3 gap-4">
+        <div className="grid grid-cols-2 grid-rows-1 col-span-3">
           <div className="cover w-full h-1/2 bg-">
             <picture className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg">
               <source srcSet={image7webp} type="image/webp" />
@@ -33,9 +33,9 @@ export const GaleryImages = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 grid-rows-1 gap-4">
+      <div className="grid grid-cols-3 grid-rows-1">
         {/* Imagenes de la izquierda */}
-        <div className="grid grid-cols-2 grid-rows-1 col-span-3 gap-4">
+        <div className="grid grid-cols-2 grid-rows-1 col-span-3">
           <div className="cover w-full h-1/2 bg-">
             <picture className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg">
               <source srcSet={image5webp} type="image/webp" />
