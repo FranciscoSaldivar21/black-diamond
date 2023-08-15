@@ -58,7 +58,7 @@ export const GiveawayPage = () => {
             <Tickets />
           </div>
         </div>
-      </div>
+      </div> 
     </Layout>
   );
 }
