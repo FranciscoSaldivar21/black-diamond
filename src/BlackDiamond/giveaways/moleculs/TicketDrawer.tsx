@@ -200,7 +200,7 @@ export const TicketsDrawer = (data: props) => {
                 selectedTickets.length > 0 ?
                     <div>
                         <p>Boletos seleccionados: </p>
-                        <div className="mt-3 grid grid-cols-6 gap-x-2 gap-y-4 mb-4 sm:grid-cols-10 md:grid-cols-12 xl:grid-cols-18">
+                        <div className="mt-3 grid grid-cols-5 gap-x-2 gap-y-4 mb-4 sm:grid-cols-10 md:grid-cols-12 xl:grid-cols-18">
                             {
                                 selectedTickets.map((element) => {
                                     return <button onClick={() => handleDeleteTicket(element)} className="ml-1 px-2 border border-solid border-black rounded-md bg-lightGold" key={element}>{element}</button>
