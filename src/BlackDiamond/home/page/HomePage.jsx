@@ -8,7 +8,7 @@ import { GaleryImages } from "../../galery/components/GaleryImages";
 export const HomePage = () => {
   return (
     <Layout>
-      <div className="w-full pt-4">
+      <div className="w-full pt-1 md:pt-2 xl:pt-4">
         <GaleryImages />
         <div className="w-11/12 mx-auto">
           {/* <CarouselHome /> */}

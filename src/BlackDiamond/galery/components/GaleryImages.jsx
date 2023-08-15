@@ -9,52 +9,38 @@ import image7webp from "../../../assets/galery/imagen-shelby-7.webp";
 
 export const GaleryImages = () => {
   return (
-    <div className="flex flex-col gap-1">
-      <div className="grid grid-cols-3 grid-rows-1 gap-4 px-2">
-        {/* Imagenes de la izquierda */}
-        <div className="grid grid-cols-2 grid-rows-1 col-span-3">
-          <div className="cover w-full h-1/2 bg-">
-            <picture className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg">
-              <source srcSet={image7webp} type="image/webp" />
-              <img
-                src={image7}
-                className="w-full h-auto col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg"
-              />
-            </picture>
-          </div>
-          <div className="cover w-full h-auto">
-            <picture className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg">
-              <source srcSet={image8webp} type="image/webp" />
-              <img
-                src={image8}
-                className="w-full h-full col-span-2 row-span-2 row-start-2 col-start-1 rounded-lg"
-              />
-            </picture>
-          </div>
-        </div>
+    <div className="flex flex-col gap-1.5 md:gap-2.5 xl:gap-4 p-1">
+      <div className="grid grid-cols-2 gap-1.5 md:gap-2.5 xl:gap-4 px-2">
+        <picture className="w-full rounded-lg">
+          <source srcSet={image7webp} type="image/webp" />
+          <img
+            src={image7}
+            className="w-full rounded-lg"
+          />
+        </picture>
+        <picture className="w-full row-start-1 col-start-1 rounded-lg">
+          <source srcSet={image8webp} type="image/webp" />
+          <img
+            src={image8}
+            className="w-full h-full col-span-2 row-span-2 row-start-2 col-start-1 rounded-lg"
+          />
+        </picture>
       </div>
-      <div className="grid grid-cols-3 grid-rows-1">
-        {/* Imagenes de la izquierda */}
-        <div className="grid grid-cols-2 grid-rows-1 col-span-3">
-          <div className="cover w-full h-1/2 bg-">
-            <picture className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg">
-              <source srcSet={image5webp} type="image/webp" />
-              <img
-                src={image5}
-                className="w-full h-auto col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg"
-              />
-            </picture>
-          </div>
-          <div className="cover w-full h-auto">
-            <picture className="w-full h-1/2 col-span-2 row-span-2 row-start-1 col-start-1 rounded-lg">
-              <source srcSet={image6webp} type="image/webp" />
-              <img
-                src={image6}
-                className="w-full h-full col-span-2 row-span-2 row-start-2 col-start-1 rounded-lg"
-              />
-            </picture>
-          </div>
-        </div>
+      <div className="grid grid-cols-2 gap-1.5 md:gap-2.5 xl:gap-4 px-2">
+        <picture className="w-full rounded-lg">
+          <source srcSet={image5webp} type="image/webp" />
+          <img
+            src={image5}
+            className="w-full rounded-lg"
+          />
+        </picture>
+        <picture className="w-full row-start-1 col-start-1 rounded-lg">
+          <source srcSet={image6webp} type="image/webp" />
+          <img
+            src={image6}
+            className="w-full h-full col-span-2 row-span-2 row-start-2 col-start-1 rounded-lg"
+          />
+        </picture>
       </div>
     </div>
   );
