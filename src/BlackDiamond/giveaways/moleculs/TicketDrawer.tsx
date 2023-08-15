@@ -214,11 +214,11 @@ export const TicketsDrawer = (data: props) => {
                     </div>
                     : ''
             }
-            <div className="mx-auto flex-col sm:flex sm:flex-row items-center sm:">
+            <div className="mx-auto sm:flex sm:flex-row sm:items-center">
                 <label>Elige un rango de boletos</label>
                 <select
                     onChange={({ target }) => setTicketsOffset(target.value)}
-                    className="ml-5 border rounded-md px-3 py-2 mr-8 bg-gray-50 border-gray-300"
+                    className="ml-2 border rounded-md sm:px-3 sm:py-2 sm:mr-4 bg-gray-50 border-gray-300 px-1 py-1"
                 >
                     {offsetRange.map((element) => {
                         return (
