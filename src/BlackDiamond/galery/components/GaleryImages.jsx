@@ -9,7 +9,7 @@ import image7webp from "../../../assets/galery/imagen-shelby-7.webp";
 
 export const GaleryImages = () => {
   return (
-    <div className="flex flex-col gap-4 px-4">
+    <div className="flex flex-col gap-1 px-4">
       <div className="grid grid-cols-3 grid-rows-1 gap-4">
         {/* Imagenes de la izquierda */}
         <div className="grid grid-cols-2 grid-rows-1 col-span-3 gap-4">
