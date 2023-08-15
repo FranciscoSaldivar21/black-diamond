@@ -48,10 +48,10 @@ export const SalePage = () => {
   return (
     <Layout>
         <div className="w-11/12 mx-auto mt-8 mb-4">
-            <p className="text-4xl font-titles uppercase md:text-5xl mb-8">Tu compra</p>
+            <p className="text-4xl font-titles uppercase md:text-5xl">Tu compra</p>
             {
                 sale.saleStatus === 0 ?
-                <div>
+                <div className="mt-2">
                     <p className="text-justify md:text-lg text-red-500">Tu compra sigue pendiente de pago.</p>
                     <p className="text-justify md:text-lg">Puedes realizar el pago por medio de tiendas de autoservicio, directamente en el banco o a través de transferencia electrónica</p>
                     <p className="text-justify md:text-lg">Cuando realices el pago o transferencia, envía tu comprobante de pago en el siguiente link.</p>
