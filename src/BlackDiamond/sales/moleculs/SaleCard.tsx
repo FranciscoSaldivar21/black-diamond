@@ -26,7 +26,7 @@ export const SaleCard = ({ sale }: props) => {
             <img
                 className="w-full"
                 src={`https://black-diamond-back-production.up.railway.app/uploads/${images[0].image_name}`}
-                alt="Sunset in the mountains"
+                alt="Car image"
             />
             <div className="px-6 py-4">
                 <p className="font-bold text-xl mb-2">{sale.car}</p>
