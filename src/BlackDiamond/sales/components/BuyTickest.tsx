@@ -6,12 +6,12 @@ export const BuyTickest = ({ data, benefic }: props) => {
   const giftTickets = data.filter(ticket => ticket.status === 2);
   const boughtTickets = data.filter(ticket => ticket.status === 1);
   return (
-    <div className="mb-8">
+    <div>
       {
         boughtTickets.length >= 10 ? <p className="text-darkGold">Tienes beneficio SUPER TRIPLE BLACK DIAMOND por comprar más de 10 boletos.</p>
           : ""
       }
-      <div className="mt-10">
+      <div className="mt-6">
         <p className="text-xl font-semibold uppercase font-subTitles md:text-3xl mb-2">Boletos comprados <span>({boughtTickets.length})</span></p>
         <div className="mt-4 grid grid-cols-5 sm:grid-cols-7 md:grid-cols-9 2xl:grid-cols-12">
           {
@@ -21,7 +21,7 @@ export const BuyTickest = ({ data, benefic }: props) => {
       </div>
       {
         giftTickets.length > 0 ?
-          <div className="mt-8">
+          <div className="mt-6">
             <p className="text-xl font-semibold uppercase font-subTitles md:text-3xl mb-2">Boletos de regalo <span>({giftTickets.length})</span></p>
             <div className="mt-4 grid grid-cols-5 sm:grid-cols-7 md:grid-cols-9 2xl:grid-cols-12">
               {

@@ -75,7 +75,6 @@ export const SalePage = () => {
                 <p><span className="font-bold md:text-lg">Fecha de compra: </span>{ sale.sale_date }</p>
                 <p><span className="font-bold md:text-lg">Total de compra: </span>${ total }</p>
                 <p className="font-bold md:text-lg">Estado: {sale.saleStatus === 1 ? <span className="text-green-500">Pagada</span> : <span className="text-red-500">Pendiente de pago</span>}</p>
-                <p><span className="font-bold md:text-lg">Estado de tu compra </span>{ sale.saleStatus === 1 ? "Pagada" : "Pendiente de pago" }</p>
             </div>
             <div className="mt-4">
                 <p className="text-xl font-semibold uppercase font-subTitles md:text-3xl mb-2">Sorteo </p>
