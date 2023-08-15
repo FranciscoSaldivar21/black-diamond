@@ -32,7 +32,6 @@ export const SalePage = () => {
             setIsLoading(false);
             
         } catch (error) {
-            console.log(error.response.data);
             if(error.response.data.ok === false)
                 reset();
         }
@@ -54,7 +53,8 @@ export const SalePage = () => {
                 sale.saleStatus === 0 ?
                 <div>
                     <p className="text-justify md:text-lg text-red-500">Tu compra sigue pendiente de pago.</p>
-                    <p className="text-justify md:text-lg">Realiza la tranferencia por tu total de compra y envía el comprobante.</p>
+                    <p className="text-justify md:text-lg">Puedes realizar el pago por medio de tiendas de autoservicio, directamente en el banco o a través de transferencia electrónica</p>
+                    <p className="text-justify md:text-lg">Cuando realices el pago o transferencia, envía tu comprobante de pago..</p>
                     <p className="text-justify md:text-lg">Si ya lo enviaste en menos de 24 horas acreditaremos tu pago.</p>
                     <p className="text-justify md:text-lg">Si ya enviaste tu comprobante y no cambia el estaus en 24 horas, envíanos mensaje por WhatsApp.</p>
                     <TransferData />

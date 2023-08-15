@@ -83,7 +83,6 @@ export const TicketsDrawer = (data: props) => {
             });
             setIsLoading(false);
         } catch (error) {
-            console.log(error);
         }
     }
 
@@ -92,10 +91,8 @@ export const TicketsDrawer = (data: props) => {
         if(ticket && ticket > 0 && ticket <= totalTickets){
             try {
                 const { data } = await axios.get(`${apiURL}giveaway/ticket/${id}/${ticket}`);
-                console.log(data.found);
                 setTicketFound(data.found);
             } catch (error) {
-                console.log(error)
             }
         }
 
@@ -150,14 +147,12 @@ export const TicketsDrawer = (data: props) => {
                     "x-token": token,
                 },
             });
-            console.log(response.data);
             navigate("/sale", {
                 state: {
                     saleId: response.data.saleId
                 }
             });
         } catch (error) {
-            console.log(error)
             const {response} = error;
             setTextAlert(response.data.error);
             setTimeout(() => {

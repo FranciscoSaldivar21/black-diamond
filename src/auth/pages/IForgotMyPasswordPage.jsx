@@ -39,13 +39,14 @@ export const IForgotMyPassword = () => {
       const response = await axios.get(
         `${apiURL}users/forgotPassword/${email}`
       );
-      console.log(response);
 
-      setAlertConfirm("Se ha enviado un correo electrónico con tu contraseña");
-      setTimeout(() => {
-        setAlertConfirm("");
-        navigate("/auth");
-      }, 4000);
+      if(response){
+        setAlertConfirm("Se ha enviado un correo electrónico con tu contraseña");
+        setTimeout(() => {
+          setAlertConfirm("");
+          navigate("/auth");
+        }, 4000);
+      }
     } catch (error) {
       if (error) {
         const errorMessage = error.response.data.error;

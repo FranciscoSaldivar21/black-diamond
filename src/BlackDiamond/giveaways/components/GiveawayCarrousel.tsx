@@ -12,7 +12,6 @@ export const GiveawayCarrousel = ({ id }: props) => {
       const { data } = await axios.get(`${apiURL}giveaway/images/${id}`);
       setImages(data);
     } catch (error) {
-      console.log(error);
     }
   };
 

@@ -25,7 +25,6 @@ export const GiveawayCard = ({ giveaway } : ICarProps) => {
       const { data } = await axios.get(`${apiURL}giveaway/images/${giveaway.id}`);
       setImages(data);
     } catch (error) {
-      console.log(error);
     }
   };
 

@@ -36,13 +36,11 @@ export const Form = () => {
 
     try {
       const { data } = await axios.post(`${apiURL}contact`, form);
-      console.log(data);
       setSuccessAlert(data.msg);
       setEmail("");
       setSubject("");
       setMessage("");
     } catch (error) {
-      console.log(error);
       setAlert("Ocurrió un error inesperado, intenta de nuevo mas tarde");
     }
   } 

@@ -12,7 +12,7 @@ export const SaleCard = ({ sale }: props) => {
             const { data } = await axios.get(`${apiURL}giveaway/images/${sale.giveaway_id}`);
             setImages(data);
         } catch (error) {
-            console.log(error);
+
         }
     };
 
