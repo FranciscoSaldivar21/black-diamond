@@ -195,8 +195,7 @@ export const RegisterPage = () => {
                     value={name}
                     onChange={({ target }) => setName(target.value)}
                     type="text"
-                    className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
-                    placeholder="Juan Perez"
+                    className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
                   />
                 </div>
                 <div>
@@ -210,13 +209,12 @@ export const RegisterPage = () => {
                     value={phone}
                     onChange={({ target }) => setPhone(target.value)}
                     type="tel"
-                    className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
-                    placeholder="Tu numero de celular"
+                    className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
                   />
                 </div>
                 <p className="text-gray-800">Domicilio</p>
-                <div className="flex">
-                  <div className="flex-1">
+                <div className="flex flex-col">
+                  <div>
                     <label
                       htmlFor="street"
                       className="block mb-2 text-sm font-medium text-gray-700"
@@ -227,12 +225,11 @@ export const RegisterPage = () => {
                       value={country}
                       onChange={({ target }) => setCountry(target.value)}
                       type="text"
-                      className=" border sm:text-sm rounded-lg  block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
-                      placeholder="México"
+                      className=" border sm:text-sm rounded-lg  block w-full p-2.5 border-gray-600   text-gray-800"
                     />
                   </div>{" "}
                   {/*Fin de calle*/}
-                  <div className="ml-5 mb-2">
+                  <div className="mt-4">
                     <label
                       htmlFor="number"
                       className="block mb-2 text-sm font-medium text-gray-700"
@@ -243,13 +240,12 @@ export const RegisterPage = () => {
                       value={postalCode}
                       onChange={({ target }) => setPostalCode(target.value)}
                       type="number"
-                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
-                      placeholder="45403"
+                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
                     />
                   </div>
                 </div>
-                <div className="flex mb-60">
-                  <div className="flex-1">
+                <div className="flex flex-col">
+                  <div>
                     <label
                       htmlFor="street"
                       className="block mb-2 text-sm font-medium text-gray-700"
@@ -260,12 +256,11 @@ export const RegisterPage = () => {
                       value={street}
                       onChange={({ target }) => setStreet(target.value)}
                       type="text"
-                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
-                      placeholder="Guayaba"
+                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
                     />
                   </div>{" "}
                   {/*Fin de calle*/}
-                  <div className="flex-1 ml-5">
+                  <div className="mt-4">
                     <label
                       className="block mb-2 text-sm font-medium text-gray-700"
                     >
@@ -275,13 +270,12 @@ export const RegisterPage = () => {
                       value={municipio}
                       onChange={({ target }) => setMunicipio(target.value)}
                       type="text"
-                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
-                      placeholder="Asunción"
+                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
                     />
                   </div>
                 </div>
-                <div className="flex">
-                  <div className="flex-1">
+                <div className="flex flex-col">
+                  <div>
                     <label
                       className="block mb-2 text-sm font-medium text-gray-700"
                     >
@@ -291,12 +285,11 @@ export const RegisterPage = () => {
                       value={colonia}
                       onChange={({ target }) => setColonia(target.value)}
                       type="text"
-                      className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
-                      placeholder="Lomas de los pájaros"
+                      className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
                     />
                   </div>{" "}
                   {/*Fin de calle*/}
-                  <div className="flex-1 ml-5">
+                  <div className="mt-4">
                     <label
                       htmlFor="number"
                       className="block mb-2 text-sm font-medium text-gray-700"
@@ -307,8 +300,7 @@ export const RegisterPage = () => {
                       value={state}
                       onChange={({ target }) => setState(target.value)}
                       type="text"
-                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
-                      placeholder="Oaxaca"
+                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
                     />
                   </div>
                 </div>
@@ -325,8 +317,7 @@ export const RegisterPage = () => {
                     type="email"
                     name="email"
                     id="email"
-                    className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
-                    placeholder="name@mail.com"
+                    className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
                     required={true}
                   />
                 </div>
@@ -343,8 +334,7 @@ export const RegisterPage = () => {
                     type="password"
                     name="password"
                     id="password"
-                    placeholder="••••••••"
-                    className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-800"
+                    className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
                     required={true}
                     autoComplete="false"
                   />
@@ -362,8 +352,7 @@ export const RegisterPage = () => {
                     type="password"
                     name="confirm-password"
                     id="confirm-password"
-                    placeholder="••••••••"
-                    className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-600 text-gray-700"
+                    className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-700"
                     required={true}
                     autoComplete="false"
                   />
