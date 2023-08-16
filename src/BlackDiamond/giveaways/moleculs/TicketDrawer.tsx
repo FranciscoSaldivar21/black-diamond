@@ -87,6 +87,16 @@ export const TicketsDrawer = (data: props) => {
     }
 
     const searchTickets = async (ticket) => {
+        if(ticket > totalTickets){
+            alert(`Elige un rango menor a ${totalTickets}`)
+            return;
+        }
+
+        if(ticket <= 0){
+            alert(`Elige un rango mayor a 0`);
+            return;
+        }
+
         setTicketSearch(ticket);
         if(ticket && ticket > 0 && ticket <= totalTickets){
             try {
