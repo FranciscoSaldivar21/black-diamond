@@ -174,7 +174,7 @@ export const RegisterPage = () => {
   return (
     <Layout>
       <div>
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-fit w-11/12">
+        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-fit">
           <NavLink className="font-titles text-2xl mb-4" to={"/"}>
             BLACK DIAMOND
           </NavLink>
@@ -183,38 +183,40 @@ export const RegisterPage = () => {
               <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl text-black">
                 Regístrate
               </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block mb-2 text-sm font-medium text-gray-700"
-                  >
-                    Tu nombre
-                  </label>
-                  <input
-                    value={name}
-                    onChange={({ target }) => setName(target.value)}
-                    type="text"
-                    className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block mb-2 text-sm font-medium text-gray-700"
-                  >
-                    Celular
-                  </label>
-                  <input
-                    value={phone}
-                    onChange={({ target }) => setPhone(target.value)}
-                    type="tel"
-                    className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
-                  />
+              <form className="space-y-3 md:space-y-3" action="#">
+                <div className="md:flex md:justify-center md:items-center">
+                  <div className="md:flex-1 md:p-2">
+                    <label
+                      htmlFor="name"
+                      className="block mb-2 text-sm font-medium text-gray-700"
+                    >
+                      Tu nombre
+                    </label>
+                    <input
+                      value={name}
+                      onChange={({ target }) => setName(target.value)}
+                      type="text"
+                      className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
+                    />
+                  </div>
+                  <div className="md:flex-1 md:mt-0 mt-3">
+                    <label
+                      htmlFor="phone"
+                      className="block mb-2 text-sm font-medium text-gray-700"
+                    >
+                      Celular
+                    </label>
+                    <input
+                      value={phone}
+                      onChange={({ target }) => setPhone(target.value)}
+                      type="tel"
+                      className=" border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
+                    />
+                  </div>
                 </div>
                 <p className="text-gray-800">Domicilio</p>
-                <div className="flex flex-col">
-                  <div>
+                <div className="md:flex md:justify-center md:items-center">
+                  <div className="md:flex-1 md:p-2">
                     <label
                       htmlFor="street"
                       className="block mb-2 text-sm font-medium text-gray-700"
@@ -229,7 +231,7 @@ export const RegisterPage = () => {
                     />
                   </div>{" "}
                   {/*Fin de calle*/}
-                  <div className="mt-4">
+                  <div className="md:flex-1 mt-4 md:mt-0">
                     <label
                       htmlFor="number"
                       className="block mb-2 text-sm font-medium text-gray-700"
@@ -244,8 +246,8 @@ export const RegisterPage = () => {
                     />
                   </div>
                 </div>
-                <div className="flex flex-col">
-                  <div>
+                <div className="md:flex md:justify-center md:items-center">
+                  <div className="md:flex-1 md:p-2">
                     <label
                       htmlFor="street"
                       className="block mb-2 text-sm font-medium text-gray-700"
@@ -260,10 +262,8 @@ export const RegisterPage = () => {
                     />
                   </div>{" "}
                   {/*Fin de calle*/}
-                  <div className="mt-4">
-                    <label
-                      className="block mb-2 text-sm font-medium text-gray-700"
-                    >
+                  <div className="md:flex-1 mt-4 md:mt-0">
+                    <label className="block mb-2 text-sm font-medium text-gray-700">
                       Municipio
                     </label>
                     <input
@@ -274,11 +274,9 @@ export const RegisterPage = () => {
                     />
                   </div>
                 </div>
-                <div className="flex flex-col">
-                  <div>
-                    <label
-                      className="block mb-2 text-sm font-medium text-gray-700"
-                    >
+                <div className="md:flex md:justify-center md:items-center">
+                  <div className="md:flex-1 md:p-2">
+                    <label className="block mb-2 text-sm font-medium text-gray-700">
                       Colonia
                     </label>
                     <input
@@ -289,7 +287,7 @@ export const RegisterPage = () => {
                     />
                   </div>{" "}
                   {/*Fin de calle*/}
-                  <div className="mt-4">
+                  <div className="md:flex-1 mt-4 md:mt-0">
                     <label
                       htmlFor="number"
                       className="block mb-2 text-sm font-medium text-gray-700"
@@ -304,7 +302,7 @@ export const RegisterPage = () => {
                     />
                   </div>
                 </div>
-                <div>
+                <div className="md:flex md:justify-center md:items-start flex flex-col pl-0 md:pl-2">
                   <label
                     htmlFor="email"
                     className="block mb-2 text-sm font-medium text-gray-700"
@@ -321,41 +319,43 @@ export const RegisterPage = () => {
                     required={true}
                   />
                 </div>
-                <div>
-                  <label
-                    htmlFor="password"
-                    className="block mb-2 text-sm font-medium text-gray-700"
-                  >
-                    Contraseña
-                  </label>
-                  <input
-                    value={password}
-                    onChange={({ target }) => setPassword(target.value)}
-                    type="password"
-                    name="password"
-                    id="password"
-                    className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
-                    required={true}
-                    autoComplete="false"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="confirm-password"
-                    className="block mb-2 text-sm font-medium text-gray-700"
-                  >
-                    Confirma tu contraseña
-                  </label>
-                  <input
-                    value={password2}
-                    onChange={({ target }) => setPassword2(target.value)}
-                    type="password"
-                    name="confirm-password"
-                    id="confirm-password"
-                    className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-700"
-                    required={true}
-                    autoComplete="false"
-                  />
+                <div className="md:flex md:justify-center md:items-center">
+                  <div className="md:flex-1 md:p-2">
+                    <label
+                      htmlFor="password"
+                      className="block mb-2 text-sm font-medium text-gray-700"
+                    >
+                      Contraseña
+                    </label>
+                    <input
+                      value={password}
+                      onChange={({ target }) => setPassword(target.value)}
+                      type="password"
+                      name="password"
+                      id="password"
+                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-800"
+                      required={true}
+                      autoComplete="false"
+                    />
+                  </div>
+                  <div className="md:flex-1 mt-4 md:mt-0">
+                    <label
+                      htmlFor="confirm-password"
+                      className="block mb-2 text-sm font-medium text-gray-700"
+                    >
+                      Confirma tu contraseña
+                    </label>
+                    <input
+                      value={password2}
+                      onChange={({ target }) => setPassword2(target.value)}
+                      type="password"
+                      name="confirm-password"
+                      id="confirm-password"
+                      className="border sm:text-sm rounded-lg block w-full p-2.5 border-gray-600   text-gray-700"
+                      required={true}
+                      autoComplete="false"
+                    />
+                  </div>
                 </div>
                 <p className="text-red-600">{alert}</p>
                 <button
