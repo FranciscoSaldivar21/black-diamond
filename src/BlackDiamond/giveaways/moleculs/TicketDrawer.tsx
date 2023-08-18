@@ -126,12 +126,12 @@ export const TicketsDrawer = (data: props) => {
 
         //Cambiar orden de dd/mm/yy a mm/dd/yy
         const auxGiveawayDate = creation_date.split("/");
-        //Crear fecha en el formato y obtener milisegundos + 3 días para el primer beneficio (GOLD)
-        const gold = new Date(`${auxGiveawayDate[1]}/${auxGiveawayDate[0]}/${auxGiveawayDate[2]}`).getTime() + 259200000;
-        //6 días (SILVER)
-        const silver = new Date(`${auxGiveawayDate[1]}/${auxGiveawayDate[0]}/${auxGiveawayDate[2]}`).getTime() + (2 * 259200000);
-        //9 días (BRONZE)
-        const bronze = new Date(`${auxGiveawayDate[1]}/${auxGiveawayDate[0]}/${auxGiveawayDate[2]}`).getTime() + (3 * 259200000);
+        //Crear fecha en el formato y obtener milisegundos + 3 días + 20 horas para el primer beneficio (GOLD)
+        const gold = new Date(`${auxGiveawayDate[1]}/${auxGiveawayDate[0]}/${auxGiveawayDate[2]}`).getTime() + 331200000;
+        //6 días + 20 horas (SILVER)
+        const silver = new Date(`${auxGiveawayDate[1]}/${auxGiveawayDate[0]}/${auxGiveawayDate[2]}`).getTime() + (2 * 331200000);
+        //9 días + 20 horas (BRONZE)
+        const bronze = new Date(`${auxGiveawayDate[1]}/${auxGiveawayDate[0]}/${auxGiveawayDate[2]}`).getTime() + (3 * 331200000);
 
 
         //Beneficio que se enviará
