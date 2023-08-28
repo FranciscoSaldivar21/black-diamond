@@ -1,20 +1,26 @@
 import { HomeItem } from "../components/HomeItem";
-// import { GaleryImages } from "../../galery/components/GaleryImages";
 import { ActiveGiveaways } from "../../giveaways/components/ActiveGiveaways";
 import { Layout } from "../../ui/layout/Layout";
-// import { CarouselHome } from "../components/CarouselHome";
 import { GaleryImages } from "../../galery/components/GaleryImages";
+import { AboutUsItem } from "./AboutUsItem";
+import { NavBar } from "../../ui/components";
 
 export const HomePage = () => {
   return (
     <Layout>
-      <div className="w-full pt-1 md:pt-2 xl:pt-4">
-        <GaleryImages />
-        <div className="w-11/12 mx-auto">
-          {/* <CarouselHome /> */}
-          <HomeItem />
-          <ActiveGiveaways margin={false}/>
+      <div className="w-full">
+        <div className="bg-navBarHome bg-cover h-80 lg:h-[860px]">
+          <NavBar/>
+          <div className="w-[600px] relative left-2 bottom-60 lg:top-1/3 md:left-12 pl-4 border-l-2 border-lightGold">
+            <p className="text-white uppercase text-xs lg:text-5xl font-bold">la mejor opción</p>
+            <p className="text-white uppercase text-xs lg:text-5xl font-bold">para tener el auto</p>
+            <p className="text-white uppercase text-xs lg:text-5xl font-bold">de tus sueños</p>
+          </div>
         </div>
+        <AboutUsItem />
+        <ActiveGiveaways margin={false}/>
+        <HomeItem />
+        <GaleryImages />
       </div>
     </Layout>
   );

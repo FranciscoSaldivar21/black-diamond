@@ -1,16 +1,12 @@
-import { SocialMedia } from "./SocialMedia.jsx";
+import { BrandInformation, Modality, SocialMedia } from "./index.js"
 
 
 export const Footer = () => {
   return (
-    <div className="flex items-center justify-center h-36 w-full bg-black">
-      <div className="flex-row">
-        <p className="uppercase text-center font-titles text-background">Black diamond</p>{/*&#174;*/}
-        <SocialMedia />
-        <p className="text-center text-background uppercase">
-          Visitanos en nuestras redes sociales
-        </p>
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-black py-12 justify-items-center">
+      <BrandInformation />
+      <SocialMedia />
+      <Modality />
     </div>
   );
 }

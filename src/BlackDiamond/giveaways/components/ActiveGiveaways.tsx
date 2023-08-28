@@ -16,13 +16,13 @@ export const ActiveGiveaways = ({margin = true} : props) => {
     getGiveaways();
   }, []);
   return giveaways.length > 0 ? (
-    <div className="mt-8">
+    <div className="mt-12">
       <div>
-        <h1 className="font-subTitles font-semibold text-2xl md:text-3xl mb-6 uppercase text-center">
-          Sorteos activos
+        <h1 className="font-subTitles font-semibold text-2xl md:text-3xl mb-6 text-center">
+          Autos en Dinámica
         </h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 mx-auto gap-6 mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto gap-32 mt-4 px-8">
         {giveaways.map((giveaway) => {
           return <GiveawayCard giveaway={giveaway} key={giveaway.id} />;
         })}

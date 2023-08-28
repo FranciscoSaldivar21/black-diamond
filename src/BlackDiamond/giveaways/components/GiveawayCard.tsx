@@ -19,6 +19,7 @@ export const GiveawayCard = ({ giveaway } : ICarProps) => {
   const navigate = useNavigate();
 
   const [images, setImages] = useState([{ image_name: "" }]);
+  const [monthName, setMonthName] = useState("");
 
   const getImages = async () => {
     try {
@@ -30,6 +31,47 @@ export const GiveawayCard = ({ giveaway } : ICarProps) => {
 
   useEffect(() => {
     getImages();
+    switch (parseInt(giveaway.giveaway_date.split("/")[1])) {
+      case 1:
+        setMonthName("Enero");
+        break;
+      case 2:
+        setMonthName("Febrero");
+        break;
+      case 3:
+        setMonthName("Marzo");
+        break;
+      case 4:
+        setMonthName("Abril");
+        break;
+      case 5:
+        setMonthName("Mayo");
+        break;
+      case 6:
+        setMonthName("Junio");
+        break;
+      case 7:
+        setMonthName("Julio");
+        break;
+      case 8:
+        setMonthName("Agosto");
+        break;
+      case 9:
+        setMonthName("Septiembre");
+        break;
+      case 10:
+        setMonthName("Octubre");
+        break;
+      case 11:
+        setMonthName("Noviembre");
+        break;
+      case 12:
+        setMonthName("Diciembre");
+        break;
+      default:
+        setMonthName("");
+        break;
+    }
   }, []);
 
   const handleButtonPress = () => {
@@ -37,30 +79,24 @@ export const GiveawayCard = ({ giveaway } : ICarProps) => {
   }
 
   return (
-    <div className="rounded overflow-hidden shadow-lg">
+    <div>
       <img
         className="w-full"
-        src={`https://black-diamond-back-production.up.railway.app/uploads/${images[0].image_name}`}
+        // src={`https://black-diamond-back-production.up.railway.app/uploads/${images[0].image_name}`}
+        src={"https://www.pngplay.com/wp-content/uploads/13/Ford-Mustang-Shelby-GT350-Download-Free-PNG.png"}
         alt="Car image"
       />
-      <div className="px-6 py-4">
-        <p className="font-bold text-xl mb-2 uppercase">{giveaway.car}</p>
-        <p className="text-justify">{giveaway.description}</p>
-        <p className="mt-2">
-          Status:{" "}
-          {giveaway.status === 1 ? (
-            <span className="text-green-500">Activo</span>
-          ) : (
-            <span className="text-red-500">Finalizado</span>
-          )}
-        </p>
+      <div className="px-6 py-4 flex flex-col justify-center items-center">
+        <p className="mb-2 font-bold text-lightGold text-2xl">{monthName}</p>
+        <p className="font-bold text-lg mb-2 uppercase">{giveaway.car}</p>
+        <p className="mb-2">Consigue tus fichas</p>
       </div>
       <div className="flex justify-center align-bottom">
         <button
           onClick={handleButtonPress}
-          className="uppercase rounded w-60 h-8 mb-4 text-black transition ease-in-out delay-50 bg-lightGold hover:-translate-y-1 hover:scale-110 hover:bg-darkGold duration-100"
+          className="rounded-3xl px-4 font-bold h-8 mb-4 text-lightGold transition ease-in-out delay-50 bg-black"
         >
-          Ver sorteo
+          Comprar Ficha
         </button>
       </div>
     </div>

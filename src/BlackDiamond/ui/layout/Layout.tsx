@@ -1,6 +1,4 @@
-import { Footer } from "../components/Footer";
-import { NavBar } from "../components/NavBar";
-import { WhatsApp } from "../components/WhatsApp";
+import { Footer, NavBar, WhatsApp } from "../components/index.js";
 
 interface LayoutProps {
     children: JSX.Element,
@@ -9,9 +7,8 @@ interface LayoutProps {
 export const Layout = ({ children } : LayoutProps) => {
   return (
     <div className="w-full h-full">
-      <NavBar />
       <WhatsApp />
-      <div className="w-full mb-8 3xl:h-screen">
+      <div className="w-full 3xl:h-screen">
         { children }
       </div>
       <Footer />
