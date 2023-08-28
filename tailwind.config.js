@@ -20,7 +20,7 @@ module.exports = {
       backgroundImage: {
         navBarHome: "url('/src/assets/home-image.jpg')",
         blog: "url('/src/assets/blog.jpg')",
-        blogSmall: "url('/src/assets/galery/foto1.jpg')",
+        blogSmall: "url('/src/assets/blog-1x1.jpg')",
       },
       gridTemplateColumns: {
         18: "repeat(18, 1fr)",
