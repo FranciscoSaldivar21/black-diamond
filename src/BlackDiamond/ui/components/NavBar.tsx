@@ -6,14 +6,12 @@ import prueba from "../../../assets/bd-prueba.png";
 export const NavBar = ({image} : props) => {
   const { id } = userStore();
   const [toogleMenu, setToogleMenu] = useState(false);
-  console.log(toogleMenu)
 
   return (
     <div className="w-full flex flex-col items-center lg:items-center lg:flex-row lg:justify-between pt-6 border-gray-200 px-16">
-      <div className="absolute right-6">
+      <div className="absolute right-6" onClick={() => setToogleMenu(!toogleMenu)}>
         <button
           className="cursor-pointer"
-          onClick={() => setToogleMenu(!toogleMenu)}
         >
           <div className="w-12 h-12 bg-background flex flex-col justify-center items-center rounded-lg">
             <div className="w-[30px] h-[20px] grid grid-rows-3 gap-1">
@@ -100,7 +98,7 @@ export const NavBar = ({image} : props) => {
                     className={({ isActive }) => (isActive ? "text-white" : "")}
                     to="/auth"
                   >
-                    Iniciar sesion
+                    LogIn
                   </NavLink>
                 </li>
               )}
