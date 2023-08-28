@@ -2,7 +2,7 @@
 
 export const HomeItem = () => {
   return (
-    <div className="my-6 lg:my-12 w-full bg-center bg-blogSmall md:bg-blog bg-no-repeat bg-cover lg:bg-cover h-96 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+    <div className="my-6 lg:my-12 w-full bg-center bg-blogSmall md:bg-blog bg-no-repeat bg-cover lg:bg-cover h-[500px] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
       <div className="flex flex-col justify-center items-start pl-12 lg:pl-36">
         <p className="text-white uppercase text-3xl font-bold">Revive </p>
         <p className="text-white uppercase text-3xl font-bold">el triunfo</p>
