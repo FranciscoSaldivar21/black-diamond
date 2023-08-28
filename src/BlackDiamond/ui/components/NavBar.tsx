@@ -10,7 +10,7 @@ export const NavBar = ({image} : props) => {
 
   return (
     <div className="w-full flex flex-col items-center lg:items-center lg:flex-row lg:justify-between pt-6 border-gray-200 px-16">
-      <div className="absolute right-16">
+      <div className="absolute right-6">
         <button
           className="cursor-pointer"
           onClick={() => setToogleMenu(!toogleMenu)}
