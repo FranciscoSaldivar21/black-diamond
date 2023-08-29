@@ -8,6 +8,6 @@ export const ContactPage = () => {
     <Layout>
       <NavBar title={"CONTACTO"} image={"bg-navBarContact"} />
       <Form />
-    </Layout>
+    </Layout> 
   );
 }
