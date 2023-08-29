@@ -47,7 +47,7 @@ export const Form = () => {
 
   return (
     <div className="py-8 w-full justify-center flex flex-col items-center">
-      <h2 className="w-9/12 text-xl lg:w-7/12 lg:text-2xl uppercase py-2.5 px-10 text-center bg-lightGold rounded-2xl font-bold">
+      <h2 className="w-9/12 text-lg md:text-xl lg:w-7/12 lg:text-2xl uppercase py-2.5 px-10 text-center bg-lightGold rounded-2xl font-bold">
         Contactanos para mas información
       </h2>
       <div className="pt-6 mx-auto w-11/12 lg:w-4/6">
