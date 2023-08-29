@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { userStore } from "../../../store/userStore";
-import prueba from "../../../assets/bd-prueba.png";
+import logoBlanco from "../../../assets/black-diamond-blanco.png";
 
 export const NavBar = ({ image }: props) => {
   const { id } = userStore();
@@ -23,7 +23,7 @@ export const NavBar = ({ image }: props) => {
             </div>
           </button>
         </div>
-        <img src={prueba} className="w-36 hidden lg:block" />
+        <img src={logoBlanco} className="w-36 hidden lg:block" />
         <div className="lg:flex lg:flex-row lg:items-center lg:justify-center lg:mr-16">
           {toogleMenu ? (
             <div className="flex flex-col lg:flex-row">

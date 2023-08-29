@@ -46,71 +46,60 @@ export const Form = () => {
   } 
 
   return (
-    <div className="w-11/12 md:w-9/12 lg:w-7/12 mx-auto mt-6 bg-gray-100 rounded-lg border border-gray-200">
-      <div className="py-8 lg:py-8 px-4 mx-auto max-w-screen-md">
-        <h2 className="mb-8 text-2xl md:text-3xl lg:text-4xl tracking-tight font-bold font-subTitles text-center text-gray-900">
-          Contactanos para mas información
-        </h2>
-        <form className="space-y-8">
-          <div>
-            <label
-              htmlFor="email"
-              className="block mb-2 text-lg text-gray-900 font-semibold"
-            >
-              Tu correo
-            </label>
+    <div className="py-8 w-full justify-center flex flex-col items-center">
+      <h2 className="w-9/12 text-xl lg:w-7/12 lg:text-2xl uppercase py-2.5 px-10 text-center bg-lightGold rounded-2xl font-bold">
+        Contactanos para mas información
+      </h2>
+      <div className="pt-6 mx-auto w-11/12 lg:w-4/6">
+        <form className="space-y-4">
+          <div className="w-full flex justify-between gap-x-4">
+            <input
+              type="text"
+              id="name"
+              className="placeholder-slate-500 text-gray-900 border border-gray-500 text-md rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+              placeholder="Nombre"
+              value={email}
+              onChange={({ target }) => setEmail(target.value)}
+              required
+            />
+            <input
+              type="number"
+              id="phone"
+              className="placeholder-slate-500 text-gray-900 border border-gray-500 text-md rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+              placeholder="Teléfono"
+              required
+              value={subject}
+              onChange={({ target }) => setSubject(target.value)}
+            />
             <input
               type="email"
               id="email"
-              className="placeholder-slate-500 text-gray-900 border border-gray-500 text-sm rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
-              placeholder="mail@mail.com"
+              className="placeholder-slate-500 text-gray-900 border border-gray-500 text-md rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+              placeholder="Correo"
               value={email}
-              onChange={({target}) => setEmail(target.value)}
+              onChange={({ target }) => setEmail(target.value)}
               required
             />
           </div>
-          <div>
-            <label
-              htmlFor="subject"
-              className="block mb-2 text-lg text-gray-900 font-semibold"
-            >
-              Asunto
-            </label>
-            <input
-              type="text"
-              id="subject"
-              className="placeholder-slate-500 text-gray-900 border border-gray-500 text-sm rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
-              placeholder="¿Cómo podemos ayudarte?"
-              required
-              value={subject}
-              onChange={({target}) => setSubject(target.value)}
-            />
-          </div>
-          <div className="sm:col-span-2">
-            <label
-              htmlFor="message"
-              className="block mb-2 text-lg text-gray-900 font-semibold"
-            >
-              Tu mensaje
-            </label>
-            <textarea
-              id="message"
-              rows="6"
-              value={message}
-              className="placeholder-slate-500 text-gray-900 border border-gray-500 text-sm rounded-lg shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
-              placeholder="Deja un comentario..."
-              onChange={({target}) => setMessage(target.value)}
-            ></textarea>
-          </div>
+          <textarea
+            id="message"
+            rows="6"
+            value={message}
+            className="placeholder-slate-500 text-gray-900 border border-gray-500 text-md rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 w-full p-2.5"
+            placeholder="Déjanos tu comentario..."
+            onChange={({ target }) => setMessage(target.value)}
+          ></textarea>
           <p className="text-red-500 font-normal">{alert}</p>
           <p className="text-green-500 font-normal">{successAlert}</p>
-          <button
-            onClick={(event) => handleSubmit(event)}
-            type="submit"
-            className="w-full font-semibold  bg-primary-600 hover:bg-lightGold focus:ring-4 focus:outline-none focus:ring-primary-300 hover:font-bold rounded-lg text-sm px-5 py-2.5 text-center bg-darkGold text-black"
-          >
-            Enviar mensaje
-          </button>
+          <div className="flex justify-end">
+            <button
+              onClick={(event) => handleSubmit(event)}
+              type="submit"
+              className="uppercase w-full md:w-auto text-md font-semibold  bg-primary-600 hover:bg-lightGold focus:ring-4 focus:outline-none focus:ring-primary-300 hover:font-bold rounded-lg px-5 py-2.5 text-center bg-lightGold text-black"
+            >
+              Enviar
+            </button>
+          </div>
         </form>
       </div>
     </div>
