@@ -1,16 +1,22 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { userStore } from "../../../store/userStore";
 import logoBlanco from "../../../assets/black-diamond-blanco.png";
+import { NavBarOptions } from "./NavBarOptions";
+import classnames from "tailwindcss-classnames";
+import { userStore } from "../../../store/userStore";
 
-export const NavBar = ({ image }: props) => {
-  const { id } = userStore();
-  const [toogleMenu, setToogleMenu] = useState(false);
+
+const defaultTitle = "La mejor opción para tener el auto de tus sueños";
+export const NavBar = ({ image = "bg-navBarHome", title = defaultTitle }: props) => {
+  const toogle = userStore((state) => state.toogle);
+  const setToogle = userStore((state) => state.setToogle);
+  const elementClass = classnames( image, "bg-center bg-cover h-96 lg:h-[860px]");
+  console.log(toogle);
 
   return (
-    <div className="bg-navBarHome bg-cover h-96 lg:h-[860px]">
+    <div className={elementClass}>
       <div className="w-full flex flex-col items-center lg:items-center lg:flex-row lg:justify-between pt-6 border-gray-200 px-16">
-        <div className="absolute right-3 lg:right-16" onClick={() => setToogleMenu(!toogleMenu)}>
+        <div className="absolute right-3 lg:right-16" onClick={() => setToogle(!toogle)}>
           <button
             className="cursor-pointer"
           >
@@ -25,95 +31,11 @@ export const NavBar = ({ image }: props) => {
         </div>
         <img src={logoBlanco} className="w-36 hidden lg:block" />
         <div className="lg:flex lg:flex-row lg:items-center lg:justify-center lg:mr-16">
-          {toogleMenu ? (
-            <div className="flex flex-col lg:flex-row">
-              <ul className="mt-16 lg:mt-0 animate-fade-left animate-once animate-duration-800 flex flex-col items-center lg:flex-row p-2 font-navBarTexts font-bold text-md uppercase">
-                <li className="text-xl font-bold block mx-4 mt-2 text-white rounded hover:text-lightGold">
-                  <NavLink
-                    className={({ isActive }) =>
-                      isActive ? "text-darkGold" : ""
-                    }
-                    to="/"
-                  >
-                    Inicio
-                  </NavLink>
-                </li>
-                <li className="text-xl font-bold block mx-4 mt-2 text-white rounded hover:text-lightGold">
-                  <NavLink
-                    className={({ isActive }) =>
-                      isActive ? "text-darkGold" : ""
-                    }
-                    to="/about"
-                  >
-                    Nosotros
-                  </NavLink>
-                </li>
-                <li className="text-xl font-bold block mx-4 mt-2 text-white rounded hover:text-lightGold">
-                  <NavLink
-                    className={({ isActive }) =>
-                      isActive ? "text-darkGold" : ""
-                    }
-                    to="/contact"
-                  >
-                    Contacto
-                  </NavLink>
-                </li>
-                <li className="text-xl font-bold block mx-4 mt-2 text-white rounded hover:text-lightGold">
-                  <NavLink
-                    className={({ isActive }) =>
-                      isActive ? "text-darkGold" : ""
-                    }
-                    to="/giveaways"
-                  >
-                    Sorteos
-                  </NavLink>
-                </li>
-                {id !== null ? (
-                  <li className="text-xl font-bold block mx-4 mt-2 text-white rounded hover:text-lightGold">
-                    <NavLink
-                      className={({ isActive }) =>
-                        isActive ? "text-darkGold" : ""
-                      }
-                      to="/mySales"
-                    >
-                      Mis compras
-                    </NavLink>
-                  </li>
-                ) : (
-                  ""
-                )}
-                {id !== null ? (
-                  <li className="text-xl font-bold block mx-4 mt-2 text-white rounded hover:font-bold">
-                    <NavLink
-                      className={({ isActive }) =>
-                        isActive ? "text-darkGold" : ""
-                      }
-                      to="/user"
-                    >
-                      Mi usuario
-                    </NavLink>
-                  </li>
-                ) : (
-                  <li className="text-xl font-bold block mx-4 mt-2 text-white rounded hover:font-bold px-3 py-0 pt-1.5 pb-1 bg-darkGold">
-                    <NavLink
-                      className={({ isActive }) => (isActive ? "text-white" : "")}
-                      to="/auth"
-                    >
-                      LogIn
-                    </NavLink>
-                  </li>
-                )}
-              </ul>
-            </div>
-          ) : (
-            ""
-          )}
+          <NavBarOptions/>
         </div>
       </div>
-      <div className="absolute left-2 top-8 lg:top-80 md:left-12 pl-4 border-l-2 border-lightGold">
-        <p className="text-white uppercase text-xs lg:text-5xl font-bold">la mejor opción</p>
-        <p className="text-white uppercase text-xs lg:text-5xl font-bold">para tener el auto</p>
-        <p className="text-white uppercase text-xs lg:text-5xl font-bold">de tus sueños</p>
+      <div className="absolute w-[200px] lg:w-[500px] left-4 top-8 lg:top-[400px] md:left-32 pl-4 border-l-2 border-lightGold">
+        <p className="text-white uppercase text-3xl lg:text-5xl font-bold">{ title }</p>
       </div>
     </div>
   );

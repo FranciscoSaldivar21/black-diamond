@@ -6,7 +6,7 @@ import { Form } from "../components"
 export const ContactPage = () => {
   return (
     <Layout>
-      <NavBar />
+      <NavBar title={"CONTACTO"} image={"bg-navBarContact"} />
       <Form />
     </Layout>
   );

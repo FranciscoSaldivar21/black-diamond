@@ -9,9 +9,9 @@ export const HomePage = () => {
   return (
     <Layout>
       <div className="w-full">
-        <NavBar/>
+        <NavBar />
         <AboutUsItem />
-        <ActiveGiveaways margin={false}/>
+        <ActiveGiveaways bgTitle={false} />
         <HomeItem />
         <GaleryImages />
       </div>

@@ -7,7 +7,7 @@ import { WhyBuy } from "../moleculs/WhyBuy";
 export const AboutPage = () => {
   return (
     <Layout>
-      <NavBar />
+      <NavBar title={"NOSOTROS"} image={"bg-navBarAbout"} />
       <div className="w-11/12 mx-auto mt-8">
         <Information />
         <WhyBuy />
