@@ -52,7 +52,7 @@ export const Form = () => {
       </h2>
       <div className="pt-6 mx-auto w-11/12 lg:w-4/6">
         <form className="space-y-4">
-          <div className="w-full flex justify-between gap-x-4">
+          <div className="w-full flex flex-col md:flex-row justify-between gap-4">
             <input
               type="text"
               id="name"
