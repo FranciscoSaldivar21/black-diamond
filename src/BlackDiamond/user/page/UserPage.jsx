@@ -6,10 +6,10 @@ import { isValidEmail } from "../../../auth/helpers/validateEmail";
 import { apiURL } from "../../../api/config";
 import { NavBar } from "../../ui/components";
 import { UserInformation } from "../components/UserInformation";
-import { UpdateUserForm } from "../components/UpdateUserForm";
+import { UpdateUserForm } from "../components/UpdateUser";
 
 export const UserPage = () => {
-	const [edit, setEdit] = useState(false);
+  const [edit, setEdit] = useState(false);
 
   const id = userStore((state) => state.id);
   const name = userStore((state) => state.name);
@@ -173,18 +173,24 @@ export const UserPage = () => {
   return (
     <Layout>
       <NavBar title={"Mi perfil"} image={"bg-navBarLogIn"} />
-			{
-				edit ? <UserInformation />
-				: <UserInformation />
-			}
-      <div className="w-9/12 mx-auto justify-end flex space-x-5 relative bottom-32">
-        <button onClick={() => setEdit(!edit)} className="text-black uppercase text-2xl py-2 px-8 bg-lightGray rounded-md">
-          Actualizar
-        </button>
-        <button className="text-white uppercase text-2xl py-2 px-6 bg-red-600 rounded-md">
-          Cerrar sesión
-        </button>
+      <div className="w-11/12 m-auto lg:w-9/12 mx-auto justify-end flex flex-col space-x-5 my-4 ">
+        <UserInformation onEditClick={setEdit} edit={edit}/>
       </div>
+      {!edit ? (
+        <div className="w-11/12 lg:w-9/12 mx-auto flex flex-col md:flex-row justify-end md:space-x-4 mb-4 space-y-3 md:space-y-0">
+          <button
+            onClick={() => setEdit(true)}
+            className="text-black uppercase w-full lg:text-2xl py-2 px-6 bg-lightGray rounded-md lg:w-64"
+          >
+            Actualizar
+          </button>
+          <button className="text-white uppercase w-full lg:text-2xl py-2 px-6 bg-red-600 rounded-md lg:w-64">
+            Cerrar sesión
+          </button>
+        </div>
+      ) : (
+        ""
+      )}
     </Layout>
   );
 };
