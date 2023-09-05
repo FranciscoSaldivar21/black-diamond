@@ -6,7 +6,7 @@ import classnames from "tailwindcss-classnames";
 import { userStore } from "../../../store/userStore";
 
 
-const defaultTitle = "La mejor opción para tener el auto de tus sueños";
+const defaultTitle = "";
 export const NavBar = ({ image = "bg-navBarHome", title = defaultTitle }: props) => {
   const toogle = userStore((state) => state.toogle);
   const setToogle = userStore((state) => state.setToogle);

@@ -1,6 +1,6 @@
 import { userStore } from "../../../store/userStore";
 import logo from "../../../assets/logo-menu.png";
-import { UpdateUserForm } from "./UpdateUser";
+import { UpdateUser } from "./UpdateUser";
 
 export const UserInformation = ({onEditClick, edit}) => {
   const name = userStore((state) => state.name);
@@ -21,31 +21,31 @@ export const UserInformation = ({onEditClick, edit}) => {
 					</p>
 					<div className="p-2 lg:p-8 grid grid-cols-1 md:grid-cols-3">
 						<div className="flex flex-col lg:items-center">
-							<p className="text-lightGray font-semibold">Nombre: </p>
-							<p className="text-white">{name}</p>
+							<p className="text-lightGray font-semibold text-lg">Nombre: </p>
+							<p className="text-white text-lg">{name}</p>
 						</div>
 						<div className="flex flex-col lg:items-center">
-							<p className="text-lightGray font-semibold">Teléfono: </p>
-							<p className="text-white">{phone}</p>
+							<p className="text-lightGray font-semibold text-lg">Teléfono: </p>
+							<p className="text-white text-lg">{phone}</p>
 						</div>
 						<div className="flex flex-col lg:items-center">
-							<p className="text-lightGray font-semibold">Correo: </p>
-							<p className="text-white">{email}</p>
+							<p className="text-lightGray font-semibold text-lg">Correo: </p>
+							<p className="text-white text-lg">{email}</p>
 						</div>
 						{
 							adress2.map((element, i) => {
 								return (
 									<div key={i} className="flex flex-col lg:items-center">
-										<p className="text-lightGray font-semibold">
+										<p className="text-lightGray font-semibold text-lg">
 											{element.split(": ")[0]}:
 										</p>
-										<p className="text-white">{element.split(": ")[1]}</p>
+										<p className="text-white text-lg">{element.split(": ")[1]}</p>
 									</div>
 								);
 							})
 						}
 					</div>
 				</div>
-				: <UpdateUserForm setEdit={onEditClick}/>
+				: <UpdateUser setEdit={onEditClick}/>
   );
 };
