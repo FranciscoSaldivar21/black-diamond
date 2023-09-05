@@ -6,7 +6,7 @@ import { userStore } from "../../store/userStore";
 import { Layout } from "../../BlackDiamond/ui/layout/Layout";
 import { apiURL } from "../../api/config";
 import { NavBar } from "../../BlackDiamond/ui/components";
-import logo from "../../assets/logo-menu.png"
+import logo from "../../assets/logo-menu.png";
 import { LogInForm } from "../components/LogInForm";
 
 export const LogInPage = () => {
