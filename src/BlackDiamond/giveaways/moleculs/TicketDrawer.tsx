@@ -131,7 +131,68 @@ export const TicketDrawer = () => {
 		initializeTickets();
 	}, [])
 
+	const handleBuyClick = async () => {
+		const pageConfirm = confirm("¿Desea terminar la compra?");
 
+		if (!pageConfirm) {
+			setTextAlert("Debe aceptar para generar la orden de compra");
+			setTimeout(() => {
+				setTextAlert("");
+			}, 4000);
+			return;
+		}
+		//Comparar fechas
+		//Fecha actual de la compra
+		let actualDate = new Date().getTime();
+
+		//Cambiar orden de dd/mm/yy a mm/dd/yy
+		const auxGiveawayDate = creation_date.split("/");
+		//Crear fecha en el formato y obtener milisegundos + 3 días + 20 horas para el primer beneficio (GOLD)
+		const gold = new Date(`${auxGiveawayDate[1]}/${auxGiveawayDate[0]}/${auxGiveawayDate[2]}`).getTime() + 331200000;
+		//6 días + 20 horas (SILVER)
+		const silver = new Date(`${auxGiveawayDate[1]}/${auxGiveawayDate[0]}/${auxGiveawayDate[2]}`).getTime() + (2 * 331200000);
+		//9 días + 20 horas (BRONZE)
+		const bronze = new Date(`${auxGiveawayDate[1]}/${auxGiveawayDate[0]}/${auxGiveawayDate[2]}`).getTime() + (3 * 331200000);
+
+
+		//Beneficio que se enviará
+		let giveawayBenefic = 0;
+
+		if (actualDate <= gold)
+			giveawayBenefic = 1
+		else if (actualDate <= silver)
+			giveawayBenefic = 2
+		else if (actualDate <= bronze)
+			giveawayBenefic = 3
+
+		const data = {
+			tickets: selectedTickets,
+			ticketPrice: 275,
+			userEmail,
+			giveawayBenefic
+		}
+
+		try {
+			const response = await axios.post(`${apiURL}sales/create-checkout-session/${id}/${idUser}`, data, {
+				headers: {
+					"x-token": token,
+				},
+			});
+			navigate("/sale", {
+				state: {
+					saleId: response.data.saleId
+				}
+			});
+		} catch (error) {
+			console.log(error);
+			const { response } = error;
+			setTextAlert(response.data.error);
+			setTimeout(() => {
+				setTextAlert("");
+				setSelectedTickets([]);
+			}, 4000);
+		}
+	}
 	return (
 		<div className="bg-zinc-800">
 			<div className='px-8 md:px-20 pb-6'>
