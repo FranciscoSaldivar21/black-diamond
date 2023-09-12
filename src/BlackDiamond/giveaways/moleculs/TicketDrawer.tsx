@@ -14,6 +14,7 @@ export const TicketDrawer = () => {
 	const limit = 42;
 	const [textAlert, setTextAlert] = useState("");
 	const userEmail = userStore((state) => state.email);
+	const token = userStore((state) => state.token);
 	const idUser = userStore((state) => state.id);
 	const [tickets, setTickets] = useState([]);
 	const totalTickets = giveawayStore((state) => state.giveaway.tickets);
