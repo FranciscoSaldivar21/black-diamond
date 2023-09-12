@@ -8,10 +8,12 @@ import axios from 'axios';
 import { apiURL } from '../../../api/config';
 import { Loading } from '../../ui/components/Loading';
 import { userStore } from '../../../store/userStore';
+import { useNavigate } from 'react-router-dom';
 
 
 export const TicketDrawer = () => {
 	const limit = 42;
+	const navigate = useNavigate();
 	const [textAlert, setTextAlert] = useState("");
 	const userEmail = userStore((state) => state.email);
 	const token = userStore((state) => state.token);
