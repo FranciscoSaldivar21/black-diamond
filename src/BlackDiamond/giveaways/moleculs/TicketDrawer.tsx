@@ -14,6 +14,7 @@ export const TicketDrawer = () => {
 	const [tickets, setTickets] = useState([]);
 	const totalTickets = giveawayStore((state) => state.giveaway.tickets);
 	const giveawayId = giveawayStore((state) => state.giveaway.id);
+	const creation_date = giveawayStore((state) => state.giveaway.creation_date);
 	const [selectedTickets, setSelectedTickets] = useState([]);
 	const [selectValue, setSelectValue] = useState(0);
 	const [search, setSearch] = useState("");
