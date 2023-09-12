@@ -1,26 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import { giveawayStore } from "../../../store/giveawayStore";
 import { userStore } from "../../../store/userStore";
-import { TicketsDrawer } from "../moleculs/TicketDrawer";
+import { TicketDrawer } from "../moleculs/TicketDrawer";
 
 
 
 export const Tickets = () => {
-    const navigate = useNavigate();
-    //Este proceso se realiza para pasar el numero de páginas necesarias como prop para la paginación de mil en mil boletos
-    const { tickets: totalTickets } = giveawayStore((state) => state.giveaway);
+    const navigate = useNavigate()
     const id = userStore((state) => state.id);
-
-    let arrayOffset = [];
-    let pages = 0;
-    for (let i = 0; pages < totalTickets; pages += 500) {
-        arrayOffset.push(i);
-        i++;
-    }
   return (
-    <div>
+    <div className="w-full mt-8">
       {id ? (
-        <TicketsDrawer offsetRange={arrayOffset} totalTickets={totalTickets} />
+        <TicketDrawer/>
       ) : (
         <div>
           <p className="text-black text-sm sm:text-base text-md md:text-xl">

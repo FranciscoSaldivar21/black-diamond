@@ -11,7 +11,6 @@ export const NavBar = ({ image = "bg-navBarHome", title = defaultTitle }: props)
   const toogle = userStore((state) => state.toogle);
   const setToogle = userStore((state) => state.setToogle);
   const elementClass = classnames( image, "bg-center bg-cover h-96 lg:h-[860px]");
-  console.log(toogle);
 
   return (
     <div className={elementClass}>

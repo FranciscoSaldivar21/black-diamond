@@ -25,6 +25,7 @@ module.exports = {
         navBarLogIn: "url('/src/assets/login-image.jpg')",
         blog: "url('/src/assets/blog.jpg')",
         blogSmall: "url('/src/assets/blog-1x1.jpg')",
+        navBarGiveawayBuy: "url('/src/assets/comprar-fichas.jpg')",
       },
       gridTemplateColumns: {
         18: "repeat(18, 1fr)",

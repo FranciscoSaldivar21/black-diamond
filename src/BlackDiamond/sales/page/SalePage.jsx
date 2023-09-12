@@ -6,6 +6,7 @@ import { BuyTickest } from "../components/BuyTickest";
 import { userStore } from "../../../store/userStore";
 import { TransferData } from "../components/TransferData";
 import { apiURL } from "../../../api/config";
+import { NavBar } from "../../ui/components";
 
 export const SalePage = () => {
   const token = userStore((state) => state.token);
@@ -48,6 +49,7 @@ export const SalePage = () => {
 
   return (
     <Layout>
+			<NavBar />
       <div className="w-11/12 mx-auto mt-8 mb-4">
         <p className="text-4xl font-titles uppercase md:text-5xl">Tu compra</p>
         {sale.saleStatus === 0 ? (
