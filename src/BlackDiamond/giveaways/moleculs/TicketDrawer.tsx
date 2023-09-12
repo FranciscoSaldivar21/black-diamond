@@ -7,10 +7,12 @@ import { TicketDrawerFooter } from './TicketDrawerFooter';
 import axios from 'axios';
 import { apiURL } from '../../../api/config';
 import { Loading } from '../../ui/components/Loading';
+import { userStore } from '../../../store/userStore';
 
 
 export const TicketDrawer = () => {
 	const limit = 42;
+	const userEmail = userStore((state) => state.email);
 	const [tickets, setTickets] = useState([]);
 	const totalTickets = giveawayStore((state) => state.giveaway.tickets);
 	const giveawayId = giveawayStore((state) => state.giveaway.id);
