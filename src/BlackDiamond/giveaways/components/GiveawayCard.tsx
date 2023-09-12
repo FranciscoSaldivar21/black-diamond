@@ -18,19 +18,10 @@ interface ICarProps {
 export const GiveawayCard = ({ giveaway } : ICarProps) => {
   const navigate = useNavigate();
 
-  const [images, setImages] = useState([{ image_name: "" }]);
   const [monthName, setMonthName] = useState("");
 
-  const getImages = async () => {
-    try {
-      const { data } = await axios.get(`${apiURL}giveaway/images/${giveaway.id}`);
-      setImages(data);
-    } catch (error) {
-    }
-  };
 
   useEffect(() => {
-    getImages();
     switch (parseInt(giveaway.giveaway_date.split("/")[1])) {
       case 1:
         setMonthName("Enero");
@@ -82,7 +73,6 @@ export const GiveawayCard = ({ giveaway } : ICarProps) => {
     <div>
       <img
         className="w-full"
-        // src={`https://black-diamond-back-production.up.railway.app/uploads/${images[0].image_name}`}
         src={"https://www.pngplay.com/wp-content/uploads/13/Ford-Mustang-Shelby-GT350-Download-Free-PNG.png"}
         alt="Car image"
       />

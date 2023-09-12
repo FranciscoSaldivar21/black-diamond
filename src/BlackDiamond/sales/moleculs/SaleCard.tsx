@@ -5,29 +5,10 @@ import { apiURL } from "../../../api/config";
 
 export const SaleCard = ({ sale }: props) => {
     const navigate = useNavigate();
-    const [images, setImages] = useState([{ image_name: "" }]);
-
-    const getImages = async () => {
-        try {
-            const { data } = await axios.get(`${apiURL}giveaway/images/${sale.giveaway_id}`);
-            setImages(data);
-        } catch (error) {
-
-        }
-    };
-
-    useEffect(() => {
-        getImages();
-    }, [])
     
 
     return (
         <div className="rounded overflow-hidden shadow-lg">
-            <img
-                className="w-full"
-                src={`https://black-diamond-back-production.up.railway.app/uploads/${images[0].image_name}`}
-                alt="Car image"
-            />
             <div className="px-6 py-4">
                 <p className="font-bold text-xl mb-2">{sale.car}</p>
                 <p className="text-justify">Id de compra: {sale.id}</p>
