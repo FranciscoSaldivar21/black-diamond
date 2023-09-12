@@ -1,6 +1,6 @@
 
 
-export const SelectedTicketsDrawer = ({ selectedTickets, deleteTicket } : props) => {
+export const SelectedTicketsDrawer = ({ selectedTickets, deleteTicket, handleClickBuy } : props) => {
 	if(selectedTickets.length > 0){
 		return (
 			<div className="my-6">
@@ -18,7 +18,7 @@ export const SelectedTicketsDrawer = ({ selectedTickets, deleteTicket } : props)
 					<p className="text-white text-sm">*Para eliminar una ficha vuelve a dar click y el numero desaparecerá de tus fichas seleccionadas</p>
 					<p className="text-white text-sm">*Si el numero especifico no aparece significa que la ficha ya ha sido comprada</p>
 				</div>
-				<button onClick={() => console.log("Comprando...")} className="mt-4 md:mt-8 bg-lightGold py-3 px-10 rounded-lg font-semibold text-xl">Comprar</button>
+				<button onClick={() => handleClickBuy()} className="mt-4 md:mt-8 bg-lightGold py-3 px-10 rounded-lg font-semibold text-xl">Comprar</button>
 			</div>
 		)
 	}else{

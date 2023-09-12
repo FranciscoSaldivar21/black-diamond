@@ -198,7 +198,7 @@ export const TicketDrawer = () => {
 			<div className='px-8 md:px-20 pb-6'>
 				<SelectedTicketsCounter number={selectedTickets.length} />
 				<Inputs selectValue={selectValue} setSelectValue={setSelectValue} searchText={search} setSearch={setSearch} searchTickets={searchTicket} />
-				<SelectedTicketsDrawer selectedTickets={selectedTickets} deleteTicket={deleteTicket} />
+				<SelectedTicketsDrawer handleClickBuy={handleBuyClick} selectedTickets={selectedTickets} deleteTicket={deleteTicket} />
 			</div>
 			<div className="w-full grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 bg-white py-6 px-6 md:px-14 lg:px-28 gap-3">
 				{
