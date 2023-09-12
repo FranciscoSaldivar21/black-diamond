@@ -12,7 +12,7 @@ import { userStore } from '../../../store/userStore';
 
 export const TicketDrawer = () => {
 	const limit = 42;
-	const [alert, setAlert] = useState("");
+	const [textAlert, setTextAlert] = useState("");
 	const userEmail = userStore((state) => state.email);
 	const [tickets, setTickets] = useState([]);
 	const totalTickets = giveawayStore((state) => state.giveaway.tickets);
