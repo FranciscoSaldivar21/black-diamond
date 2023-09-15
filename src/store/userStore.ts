@@ -9,7 +9,9 @@ interface User {
     token: string,
     adress: string,
     toogle: boolean,
+		timerStart: boolean,
     setToogle: (toogle: boolean) => void,
+    setTimerStart: (start: boolean) => void,
     setId: (id: number) => void,
     setPhone: (phone: string) => void,
     setName: (name: string) => void,
@@ -28,6 +30,7 @@ export const userStore = create<User>(
         token: null,
         phone: null,
         adress: null,
+				timerStart: false,
         toogle: false,
         setId: (id: number) => set((state) => ({id})),
         setPhone: (phone: number) => set((state) => ({phone})),
@@ -36,6 +39,7 @@ export const userStore = create<User>(
         setToken: (token: string) => set((state) => ({token})),
         setAdress: (adress: string) => set((state) => ({adress})),
         setToogle: (toogle: boolean) => set((state) => ({toogle})),
+        setTimerStart: (start: boolean) => set((state) => ({start})),
         reset: () => set((state) => ({
           id: null,
           name: null,
@@ -43,6 +47,7 @@ export const userStore = create<User>(
           email: null,
           adress: null,
           token: null,
+					timerStart: false
         }))
     }),
     {

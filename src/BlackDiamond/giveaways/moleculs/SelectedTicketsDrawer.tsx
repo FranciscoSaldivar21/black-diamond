@@ -1,6 +1,8 @@
+import { giveawayStore } from "../../../store/giveawayStore";
 
 
 export const SelectedTicketsDrawer = ({ selectedTickets, deleteTicket, handleClickBuy } : props) => {
+	const ticketPrice = giveawayStore((state) => state.giveaway.ticket_price);
 	if(selectedTickets.length > 0){
 		return (
 			<div className="my-6">
@@ -18,6 +20,7 @@ export const SelectedTicketsDrawer = ({ selectedTickets, deleteTicket, handleCli
 					<p className="text-white text-sm">*Para eliminar una ficha vuelve a dar click y el numero desaparecerá de tus fichas seleccionadas</p>
 					<p className="text-white text-sm">*Si el numero especifico no aparece significa que la ficha ya ha sido comprada</p>
 				</div>
+				<p className="mt-4 text-lightGold text-lg">Tu total es de: <span className="font-bold">${selectedTickets.length * ticketPrice}</span></p>
 				<button onClick={() => handleClickBuy()} className="mt-4 md:mt-8 bg-lightGold py-3 px-10 rounded-lg font-semibold text-xl">Comprar</button>
 			</div>
 		)

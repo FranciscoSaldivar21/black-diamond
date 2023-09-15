@@ -23,6 +23,7 @@ module.exports = {
         navBarContact: "url('/src/assets/contact-image.jpg')",
         navBarGiveaway: "url('/src/assets/giveaway-image.jpg')",
         navBarLogIn: "url('/src/assets/login-image.jpg')",
+        navBarSales: "url('/src/assets/sales-image.png')",
         blog: "url('/src/assets/blog.jpg')",
         blogSmall: "url('/src/assets/blog-1x1.jpg')",
         navBarGiveawayBuy: "url('/src/assets/comprar-fichas.jpg')",

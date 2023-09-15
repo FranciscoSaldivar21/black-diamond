@@ -12,8 +12,8 @@ export const BuyTickest = ({ data, benefic }: props) => {
           : ""
       }
       <div className="mt-6">
-        <p className="text-xl font-semibold uppercase font-subTitles md:text-3xl mb-2">Boletos comprados <span>({boughtTickets.length})</span></p>
-        <div className="mt-4 grid grid-cols-5 sm:grid-cols-7 md:grid-cols-9 2xl:grid-cols-12">
+        <p className="text-xl font-semibold uppercase font-subTitles md:text-3xl mb-2">Fichas compradas <span>({boughtTickets.length})</span></p>
+        <div className="mt-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 2xl:grid-cols-8 gap-2 md:gap-3">
           {
             boughtTickets.map(ticket => <TicketItem key={ticket.ticket_number} ticketNumber={ticket.ticket_number} color={color} />)
           }
@@ -22,8 +22,8 @@ export const BuyTickest = ({ data, benefic }: props) => {
       {
         giftTickets.length > 0 ?
           <div className="mt-6">
-            <p className="text-xl font-semibold uppercase font-subTitles md:text-3xl mb-2">Boletos de regalo <span>({giftTickets.length})</span></p>
-            <div className="mt-4 grid grid-cols-5 sm:grid-cols-7 md:grid-cols-9 2xl:grid-cols-12">
+            <p className="text-xl font-semibold uppercase font-subTitles md:text-3xl mb-2">Fichas de regalo <span>({giftTickets.length})</span></p>
+						<div className="mt-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 2xl:grid-cols-8 gap-2 md:gap-3">
               {
                 giftTickets.map(ticket => <TicketItem key={ticket.ticket_number} ticketNumber={ticket.ticket_number} color={color} />)
               }

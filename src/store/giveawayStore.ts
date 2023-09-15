@@ -10,6 +10,7 @@ interface IGiveawayState {
   status: number;
   winner_id: number;
   tickets: number;
+	ticket_price: number;
 }
 
 interface IGiveaway {

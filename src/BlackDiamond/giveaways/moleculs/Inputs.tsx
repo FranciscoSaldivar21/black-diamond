@@ -21,7 +21,7 @@ export const Inputs = ({selectValue, setSelectValue, searchText, setSearch, sear
 					</svg>
 				</div>
 				<input type="number" className="block w-full p-2 pl-10 text-xl text-gray-900 border border-gray-300 rounded-lg bg-gray-50" placeholder="Ingresa un número" value={searchText} onChange={({ target }) => setSearch(target.value)} />
-				<button onClick={() => searchTickets()} type="submit" className="text-black absolute right-1 bottom-1.5 bg-darkGold hover:font-bold font-medium rounded-lg text-xl px-2 py-1">Buscar</button>
+				<button onClick={() => searchTickets()} type="submit" className="text-black absolute right-1 bottom-1.5 bg-lightGold font-semibold rounded-lg text-xl px-2 py-1">Buscar</button>
 			</div>
 		</div>
 	)

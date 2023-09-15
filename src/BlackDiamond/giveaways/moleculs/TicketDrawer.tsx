@@ -27,9 +27,11 @@ export const TicketDrawer = () => {
 	const [search, setSearch] = useState("");
 
 	const searchTicket = async () => {
-		if (search < 1 || search > totalTickets) {
-			alert("Ingresa un numero mayor a 0 y menor a " + totalTickets);
-			return;
+		if (parseInt(selectValue) !== 6){
+			if (search < 1 || search > totalTickets) {
+				alert("Ingresa un numero mayor a 0 y menor a " + totalTickets);
+				return;
+			}
 		}
 
 		switch (parseInt(selectValue)) {
@@ -52,7 +54,10 @@ export const TicketDrawer = () => {
 				
 				try {
 					const { data } = await axios.get(`${apiURL}giveaway/getTicketsStartWith/${giveawayId}/${search}`);
-					setTickets(data.array);
+					let result = data.array.filter((item, index) => {
+						return data.array.indexOf(item) === index;
+					})
+					setTickets(result);
 				} catch (error) {
 					console.log(error);
 				}
@@ -62,7 +67,10 @@ export const TicketDrawer = () => {
 
 				try {
 					const { data } = await axios.get(`${apiURL}giveaway/getTicketsEndtWith/${giveawayId}/${search}`);
-					setTickets(data.array);
+					let result = data.array.filter((item, index) => {
+						return data.array.indexOf(item) === index;
+					})
+					setTickets(result);
 				} catch (error) {
 					console.log(error);
 				}
@@ -71,9 +79,11 @@ export const TicketDrawer = () => {
 				setTickets([]);
 
 				try {
-					const { data } = await axios.get(`${apiURL}giveaway/getTicketsContain/${giveawayId}/${search}`);
-					console.log(data);
-					// setTickets(data.array);
+					const { data } = await axios.get(`${apiURL}giveaway//getTicketsContain/${giveawayId}/${search}`);
+					let result = data.array.filter((item, index) => {
+						return data.array.indexOf(item) === index;
+					})
+					setTickets(result);
 				} catch (error) {
 					console.log(error);
 				}
@@ -83,7 +93,6 @@ export const TicketDrawer = () => {
 					const { data } = await axios.get(`${apiURL}giveaway/isTicketFree/${search}/${giveawayId}`);
 					if (data.isFree) {
 						setTickets([parseInt(search)]);
-						console.log(tickets);
 						return;
 					}
 					setSearch("");

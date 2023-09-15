@@ -27,7 +27,7 @@ export const MyShopping = () => {
     
   return (
     sales.length > 0 ?
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 mt-4">
+        <div className="grid grid-cols-1 gap-y-4 mt-4">
             {
                 sales.map((sale) => <SaleCard sale={sale} key={sale.id} />)
             }
