@@ -2,9 +2,9 @@
 
 export const SaleBenefic = ({ benefic }: props) => {
 	return (
-		<div className="uppercase font-extrabold md:text-lg mt-2">
+		<div className="uppercase font-extrabold md:text-lg">
 			{
-				benefic === 0 ? (
+				benefic === 1 ? (
 					<p>Tienes beneficio GOLD DIAMOND por comprar en la primer semana</p>
 				) : benefic === 2 ? (
 					<p>
